@@ -6,6 +6,7 @@
   "dependencies": {
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
+    "gatsby-plugin-jss": "^1.5.13",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "react-helmet": "^5.2.0"
   },
@@ -14,8 +15,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "rm -rf public && gatsby build",
+    "dev": "gatsby develop",
+    "deploy": "rm -rf public && gatsby build && surge ./public -d https://heroes.surge.sh",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
