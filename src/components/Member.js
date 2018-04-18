@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
 
-import { colors, fonts } from '../../theme'
+import { colors, fonts } from '../theme'
 
 const styles = {
   container: {

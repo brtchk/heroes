@@ -2,15 +2,17 @@ import React from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
 
-import { colors, fonts } from '../../theme'
+import { colors, fonts } from '../theme'
 
 const styles = {
   container: {
-    textAlign: 'center',
-    maxWidth: 285,
+    maxWidth: 305,
   },
   image: {
-    maxWidth: 120,
+    maxHeight: 100,
+  },
+  hightlight: {
+    color: colors.orange,
   },
   text: {
     fontSize: fonts.size.xs,
@@ -20,10 +22,13 @@ const styles = {
   }
 }
 
-const Thesis = ({ classes, image, text }) => (
+const Thesis = ({ classes, image, hightlight, text }) => (
   <div className={classes.container}>
     <img className={classes.image} src={image} />
-    <p className={classes.text}>{text}</p>
+    <p className={classes.text}>
+      <span className={classes.hightlight}>{hightlight}</span>
+      {text}
+    </p>
   </div>
 )
 

@@ -2,21 +2,21 @@ import React from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
 
-import { colors, fonts } from '../../theme'
+import { colors, fonts } from '../theme'
 
 const styles = {
   container: {
-    fontSize: fonts.size.xs - 2,
+    fontSize: fonts.size.xs,
     marginBottom: 40,
+    lineHeight: 1.3,
   },
   question: {
     color: colors.orange,
-    paddingLeft: 60,
+    paddingLeft: 40,
+    maxWidth: 440,
   },
   answer: {
     color: colors.brown,
-    lineHeight: 1.3,
-    marginTop: 20,
   }
 }
 

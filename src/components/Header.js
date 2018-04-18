@@ -2,7 +2,9 @@ import React from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
 
-import { colors, fonts, dimensions } from '../../theme'
+import Logo from './Logo'
+
+import { colors, fonts, dimensions } from '../theme'
 
 const menuItems = [
   {
@@ -10,11 +12,11 @@ const menuItems = [
     route: '/',
   },
   {
-    title: 'Место',
+    title: 'Команда',
     route: '/',
   },
   {
-    title: 'Команда',
+    title: 'Место',
     route: '/',
   },
   {
@@ -52,12 +54,12 @@ const styles = {
     display: 'inline-block',
     textDecoration: 'none',
     fontSize: 50,
-    marginRight: 15,
+    marginRight: 25,
   },
   link: {
     display: 'inline-block',
     textDecoration: 'none',
-    margin: '0 15px',
+    margin: '0 12px',
     '&:hover': {
       color: colors.lightBlue,
     },
@@ -71,8 +73,8 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: 180,
-    height: 37,
+    width: 186,
+    height: 48,
     fontSize: fonts.size.xs,
     border: `3px solid ${colors.black}`,
     '&:hover': {
@@ -91,7 +93,7 @@ const Header = ({ classes }) => (
           to="/"
           className={classes.logo}
         >
-          ГЕРОИ
+          <Logo color={colors.black} style={{ height: 40 }} />
         </Link>
         <div className={classes.menuItems}>
           {menuItems.map(item => (
