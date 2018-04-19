@@ -21,7 +21,8 @@ import { colors, fonts, dimensions } from '../theme'
 
 const styles = {
   container: {
-    paddingTop: 140,
+    paddingTop: 70,
+    paddingBottom: 150,
     color: colors.brown,
     lineHeight: 1.3,
   },
