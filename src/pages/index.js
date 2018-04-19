@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
+import Scrollspy from 'react-scrollspy'
 
+import Scroll from '../components/Scroll'
 import Thesis from '../components/Thesis'
 import Card from '../components/Card'
 import Member from '../components/Member'
@@ -217,12 +219,14 @@ const IndexPage = ({ classes }) => (
           <p className={classes.coverSubtl}>
             Территория раскрытия возможностей
           </p>
-          <Link
-            to="/"
-            className={classes.button}
-          >
-            Выбрать смену
-          </Link>
+          <Scroll type="id" element="smena">
+            <a
+              href="#"
+              className={classes.button}
+            >
+              Выбрать смену
+            </a>
+          </Scroll>
         </div>
       </div>
     </div>
