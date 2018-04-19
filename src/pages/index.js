@@ -9,6 +9,7 @@ import Card from '../components/Card'
 import Member from '../components/Member'
 import Question from '../components/Question'
 import Logo from '../components/Logo'
+import Map from '../components/Map'
 
 import heroesWhite from '../static/heroes-white.svg'
 import bgImage from '../static/heroes-bg.jpg'
@@ -33,7 +34,7 @@ import { colors, fonts, dimensions } from '../theme'
 
 const styles = {
   container: {
-    paddingTop: 80,
+    padding: '80px 0',
     color: colors.brown,
   },
   cover: {
@@ -99,6 +100,7 @@ const styles = {
   },
   content: {
     maxWidth: dimensions.maxWidth,
+    width: dimensions.maxWidth,
     margin: 'auto',
   },
   thesises: {
@@ -160,7 +162,6 @@ const styles = {
   mapUnderlay: {
     width: 261,
     height: 404,
-    backgroundColor: colors.brown,
     margin: 'auto',
   },
   sliderBlock: {
@@ -358,7 +359,9 @@ const IndexPage = ({ classes }) => (
             </p>
           </div>
           <div className={classes.placeRight}>
-            <div className={classes.mapUnderlay} />
+            <div className={classes.mapUnderlay}>
+              <Map />
+            </div>
           </div>
         </div>
         <div className={classes.placeInfo}>

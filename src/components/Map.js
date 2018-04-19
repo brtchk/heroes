@@ -59,7 +59,7 @@ const WrappedMap = withScriptjs(withGoogleMap(Map))
 WrappedMap.defaultProps = {
   googleMapURL: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBMguZJnB4mYk6NMAKGLLnKW7RBvn3XTe0&v=3.exp&libraries=geometry,drawing,places',
   loadingElement: <div style={{ height: `100%` }} />,
-  containerElement: <div style={{ height: `400px` }} />,
+  containerElement: <div style={{ height: `400px`, width: '100%' }} />,
   mapElement: <div style={{ height: `100%` }} />,
 }
 
