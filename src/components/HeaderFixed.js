@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Scrollspy from 'react-scrollspy'
 import injectSheet from 'react-jss'
 
 import Scroll from './Scroll'
 import Logo from './Logo'
+import CallForm from './CallForm'
 
 import { colors, fonts, dimensions } from '../theme'
 
@@ -28,6 +29,9 @@ const menuItems = [
 ]
 
 const styles = {
+  root: {
+    position: 'relative',
+  },
   bg: {
     backgroundColor: colors.orange,
     color: colors.black,
@@ -87,46 +91,73 @@ const styles = {
   }
 }
 
-const Header = ({ classes }) => (
-  <div className={classes.bg}>
-    <div className={classes.container}>
-      <div className={classes.leftBlock}>
-        <Link
-          to="/"
-          className={classes.logo}
-        >
-          <Logo color={colors.black} style={{ height: 40 }} />
-        </Link>
-        <div className={classes.menuItems}>
-          <Scrollspy items={ ['smena', 'team', 'place', 'faq'] } currentClassName="is-active" offset={-300}>
-            {menuItems.map(item => (
-              <Scroll type="id" element={item.route}>
-                <a
-                  href="#"
-                  className={classes.link}
-                  style={{ fontSize: fonts.size.s }}
+class Header extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      open: false,
+    }
+  }
+
+  handleClick = () => {
+    this.setState({ open: !this.state.open })
+  }
+
+  render() {
+    const { classes } = this.props
+    const { open } = this.state
+
+    return (
+      <div className={classes.root}>
+        <div className={classes.bg}>
+          <div className={classes.container}>
+            <div className={classes.leftBlock}>
+              <Link
+                to="/"
+                className={classes.logo}
+              >
+                <Logo color={colors.black} style={{ height: 40 }} />
+              </Link>
+              <div className={classes.menuItems}>
+                <Scrollspy
+                  items={ ['smena', 'team', 'place', 'faq'] }
+                  currentClassName="is-active"
+                  offset={-300}
                 >
-                  {item.title}
-                </a>
-              </Scroll>
-            ))}
-          </Scrollspy>
+                  {menuItems.map(item => (
+                    <Scroll type="id" element={item.route}>
+                      <a
+                        href="#"
+                        className={classes.link}
+                        style={{ fontSize: fonts.size.s }}
+                      >
+                        {item.title}
+                      </a>
+                    </Scroll>
+                  ))}
+                </Scrollspy>
+              </div>
+            </div>
+            <div className={classes.rightBlock}>
+              <div className={classes.info}>
+                <p>+7 499 450 56 06</p>
+                <p>hello@heroescamp.ru</p>
+              </div>
+              <Link
+                to="/"
+                className={classes.button}
+                onClick={this.handleClick}
+              >
+                Заказать звонок
+              </Link>
+            </div>
+          </div>
         </div>
+        {open && <CallForm open={open} />}
       </div>
-      <div className={classes.rightBlock}>
-        <div className={classes.info}>
-          <p>+7 499 450 56 06</p>
-          <p>hello@heroescamp.ru</p>
-        </div>
-        <Link
-          to="/"
-          className={classes.button}
-        >
-          Заказать звонок
-        </Link>
-      </div>
-    </div>
-  </div>
-)
+    )
+  }
+}
 
 export default injectSheet(styles)(Header)
