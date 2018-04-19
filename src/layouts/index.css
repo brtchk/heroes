@@ -24,3 +24,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.image-gallery-image img {
+  max-height: 410px;
+}

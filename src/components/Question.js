@@ -23,7 +23,10 @@ const styles = {
 const Thesis = ({ classes, question, answer }) => (
   <div className={classes.container}>
     <p className={classes.question}>{question}</p>
-    <p className={classes.answer}>{answer}</p>
+    <p
+      className={classes.answer}
+      dangerouslySetInnerHTML={{ __html: answer }}
+    />
   </div>
 )
 

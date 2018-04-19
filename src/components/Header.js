@@ -32,7 +32,7 @@ const styles = {
     position: 'fixed',
     top: 0,
     width: '100%',
-    zIndex: 1,
+    zIndex: 100,
   },
   container: {
     height: 80,
