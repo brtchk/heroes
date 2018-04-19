@@ -25,6 +25,14 @@ a {
   color: inherit;
 }
 
+/* br {
+  line-height: 0.2;
+} */
+
 .image-gallery-image img {
   max-height: 410px;
+}
+
+.highlight {
+  color: rgb(255, 91, 46);
 }
