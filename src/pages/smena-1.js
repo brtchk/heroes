@@ -6,6 +6,10 @@ import Question from '../components/Question'
 import Map from '../components/Map'
 import ImageGallery from '../components/ImageGallery'
 
+import AgeIcon from '../components/Icons/Age'
+import CalendarIcon from '../components/Icons/Calendar'
+import TimeIcon from '../components/Icons/Time'
+
 import mainImage from '../static/smena-1-inside.jpg'
 import image1 from '../static/smena-1-1.jpg'
 import image2 from '../static/smena-1-2.jpg'
@@ -33,12 +37,6 @@ const styles = {
     position: 'relative',
     width: 250,
   },
-  apply: {
-    width: 300,
-    height: 400,
-    backgroundColor: colors.orange,
-    position: 'fixed',
-  },
   textBlock: {
     margin: '30px 0',
   },
@@ -49,7 +47,7 @@ const styles = {
     fontSize: fonts.size.xs,
   },
   title: {
-    fontSize: fonts.size.xxl,
+    fontSize: fonts.size.xxl - 7,
     color: colors.orange,
     marginBottom: 50,
     marginTop: 40,
@@ -81,6 +79,48 @@ const styles = {
   },
   tableLeft: {
     marginRight: 90,
+  },
+  apply: {
+    width: 245,
+    padding: '25px 17px',
+    backgroundColor: colors.orange,
+    fontSize: fonts.size.xxs,
+    color: colors.black,
+    position: 'fixed',
+  },
+  applyTitle: {
+    fontSize: fonts.size.xs,
+    maxWidth: '90%',
+  },
+  applySubtl: {
+    color: colors.white,
+  },
+  applyInfoChild: {
+    display: 'flex',
+    alignItems: 'center',
+    margin: '8px 0',
+  },
+  applyInfoText: {
+    display: 'inline-block',
+    marginLeft: 30,
+  },
+  button: {
+    margin: '0 auto',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: 45,
+    marginTop: 20,
+    fontSize: fonts.size.xs,
+    backgroundColor: colors.lightBlue,
+    color: colors.white,
+    transition: 'all ease 0.2s',
+    '&:hover': {
+      backgroundColor: colors.white,
+      color: colors.black,
+      borderColor: 'transparent',
+    },
   },
 }
 
@@ -211,15 +251,13 @@ const IndexPage = ({ classes }) => (
         <div style={{ margin: '45px 0' }}>
           <Map />
         </div>
-
-          <ImageGallery
-            images={[
-              { original: image1 },
-              { original: image2 },
-              { original: image3 },
-            ]}
-          />
-
+        <ImageGallery
+          images={[
+            { original: image1 },
+            { original: image2 },
+            { original: image3 },
+          ]}
+        />
         <p className={classes.title}>Организация</p>
         <div>
           <Question
@@ -253,6 +291,42 @@ const IndexPage = ({ classes }) => (
       </div>
       <div className={classes.rightCol}>
         <div className={classes.apply}>
+          <p className={classes.applySubtl}>Летняя смена для подростков</p>
+          <p className={classes.applyTitle}>Город сотрудничества</p>
+          <div style={{ margin: '40px 0' }}>
+            <p className={classes.applyInfoChild}>
+              <AgeIcon
+                color={colors.black}
+                width={22}
+                className={classes.icon}
+              />
+              <span className={classes.applyInfoText}>10–13 лет</span>
+            </p>
+            <p className={classes.applyInfoChild}>
+              <CalendarIcon
+                color={colors.black}
+                width={22}
+                className={classes.icon}
+              />
+              <span className={classes.applyInfoText}>1–14 июня</span>
+            </p>
+            <p className={classes.applyInfoChild}>
+              <TimeIcon
+                color={colors.black}
+                width={22}
+                className={classes.icon}
+              />
+              <span className={classes.applyInfoText}>14 дней</span>
+            </p>
+          </div>
+          <p className={classes.applySubtl}>Стоимость</p>
+          <p className={classes.applyTitle}>49 900 рублей</p>
+          <Link
+            to="/"
+            className={classes.button}
+          >
+            Отправить заявку
+          </Link>
         </div>
       </div>
     </div>
