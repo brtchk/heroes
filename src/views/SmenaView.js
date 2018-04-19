@@ -248,7 +248,7 @@ const SmenaView = ({
           <p className={classes.applySubtl}>Стоимость</p>
           <p className={classes.applyTitle}>{`${smena.price} рублей`}</p>
           <Link
-            to="/"
+            to={smena.applyRoute}
             className={classes.button}
           >
             Отправить заявку

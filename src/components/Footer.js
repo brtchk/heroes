@@ -15,7 +15,6 @@ const styles = {
   },
   container: {
     minHeight: 125,
-    marginTop: 75,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
