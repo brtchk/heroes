@@ -40,12 +40,15 @@ class CallForm extends Component {
   }
 
   render() {
-    const { classes, open } = this.props
+    const { classes, open, style } = this.props
 
     return (
       <div
         className={classes.container}
-        style={{ top: open ? 80 : -200 }}
+        style={{
+          top: open ? 80 : -200,
+          ...style,
+        }}
       >
         <form
           id="gform-contact"

@@ -145,7 +145,7 @@ class Header extends Component {
                 <p>hello@heroescamp.ru</p>
               </div>
               <Link
-                to="/"
+                to="#"
                 className={classes.button}
                 onClick={this.handleClick}
               >
