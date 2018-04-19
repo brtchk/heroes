@@ -107,6 +107,8 @@ const styles = {
   },
   title: {
     fontSize: fonts.size.xxl,
+    paddingTop: 100,
+    marginTop: -100,
   },
   subtl: {
     fontSize: fonts.size.xs,
@@ -247,7 +249,7 @@ const IndexPage = ({ classes }) => (
           text="развитие стойкости духа, стратегического мышления,  лидерских качеств, умения взаимодействовать в команде, и прежде всего, осознанное отношение к себе и окружающим."
         />
       </div>
-      <p className={classes.title}>Смены</p>
+      <p className={classes.title} id="smena">Смены</p>
       <p className={classes.subtl}>
         В программах сочетаются элементы физического и психо-эмоционального развития — возможность обогатиться бесценным опытом, незабываемыми эмоциями и погрузиться в захватывающие приключения. Вместе с командой дети преодолевают препятствия, формируют доверие к окружающим и уверенность в себе, здоровые привычки и навыки коммуникации.
       </p>
@@ -307,7 +309,7 @@ const IndexPage = ({ classes }) => (
         </p>
       </div>
       <div className={classes.teamBlock}>
-        <p className={classes.title}>Наша команда</p>
+        <p className={classes.title} id="team">Наша команда</p>
         <p className={classes.subtl}>
           В нашем авангарде исключительной храбрости и геройства — опытные наставники, которые полностью обеспечивают безопасность и эффективность проекта. От педагогов и психологов до спасателей и ветеранов спецназа, сообщество ГЕРОЕВ объединяет профессионалов c многолетним стажем работы с детьми и в социальной сфере.
         </p>
@@ -340,7 +342,7 @@ const IndexPage = ({ classes }) => (
         </div>
       </div>
       <div className={classes.block}>
-        <p className={classes.title}>Место проведения</p>
+        <p className={classes.title} id="place">Место проведения</p>
         <div className={classes.placeContent}>
           <div className={classes.placeLeft}>
             <p className={classes.subtl}>
@@ -364,7 +366,7 @@ const IndexPage = ({ classes }) => (
         <img src={image1} className={classes.slider} />
       </div>
       <div className={classes.faqBlock}>
-        <p className={classes.title}>Ответы на вопросы</p>
+        <p className={classes.title} id="faq">Ответы на вопросы</p>
         <div className={classes.questions}>
           <div className={classes.qaColumn}>
             <Question

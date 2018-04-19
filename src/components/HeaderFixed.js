@@ -11,19 +11,19 @@ import { colors, fonts, dimensions } from '../theme'
 const menuItems = [
   {
     title: 'Смены',
-    route: '/#smena',
+    route: 'smena',
   },
   {
     title: 'Команда',
-    route: '/#team',
+    route: 'team',
   },
   {
     title: 'Место',
-    route: '/#place',
+    route: 'place',
   },
   {
     title: 'FAQ',
-    route: '/#faq',
+    route: 'faq',
   },
 ]
 
@@ -31,6 +31,7 @@ const styles = {
   bg: {
     backgroundColor: colors.orange,
     color: colors.black,
+    position: 'fixed',
     top: 0,
     width: '100%',
     zIndex: 100,
@@ -99,15 +100,15 @@ const Header = ({ classes }) => (
         <div className={classes.menuItems}>
           <Scrollspy items={ ['smena', 'team', 'place', 'faq'] } currentClassName="is-active" offset={-300}>
             {menuItems.map(item => (
-              <Link
-                key={item.title}
-                className={classes.link}
-                style={{ fontSize: fonts.size.s }}
-                to={item.route}
-              >
-                {item.title}
-              </Link>
-
+              <Scroll type="id" element={item.route}>
+                <a
+                  href="#"
+                  className={classes.link}
+                  style={{ fontSize: fonts.size.s }}
+                >
+                  {item.title}
+                </a>
+              </Scroll>
             ))}
           </Scrollspy>
         </div>

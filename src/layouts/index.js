@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
+import HeaderFixed from '../components/HeaderFixed'
 import Footer from '../components/Footer'
 
 import './reset.css'
 import './index.css'
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children, data, location }) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -17,7 +18,11 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    {
+      location.pathname === '/'  ?
+      <HeaderFixed siteTitle={data.site.siteMetadata.title} /> :
+      <Header siteTitle={data.site.siteMetadata.title} />
+    }
     <div>
       {children()}
     </div>
