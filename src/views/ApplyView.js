@@ -7,6 +7,11 @@ import AgeIcon from '../components/Icons/Age'
 import CalendarIcon from '../components/Icons/Calendar'
 import TimeIcon from '../components/Icons/Time'
 
+import {
+  getFormData,
+  handleFormSubmit as submitForm
+} from '../helpers/google-form'
+
 import { colors, fonts, dimensions } from '../theme'
 
 const styles = {
@@ -75,9 +80,55 @@ class Apply extends Component {
     }
   }
 
-  handleFormSubmit = e => {
-    e.preventDefault();
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.setState({
+      loading: true,
+      buttonTitle: 'Отправка...',
+    });
+
+    const formId = 'gform-apply';
+    const data = getFormData(formId);
+
+    return submitForm('/macros/s/AKfycbxzhcb8LJXvfyLNcPtBZsO7onAmXPTB9LG1TWzENzAFJFeYnkk/exec', data)
+    .then(() => {
+      this.setState({
+        loading: false,
+        success: true,
+        buttonTitle: 'Отправлено',
+        // buttonColor: colors.button.success,
+      });
+
+      document.getElementById(formId).reset();
+
+      setTimeout(() => {
+        this.setState({
+          success: false,
+          buttonTitle: 'Отправить',
+          // buttonColor: colors.button.normal,
+        });
+      }, 4500);
+
+      return null;
+    })
+    .catch((e) => {
+      this.setState({
+        loading: false,
+        success: false,
+        buttonTitle: 'Ошибка. Попробуйте еще раз',
+        // buttonColor: colors.button.error,
+      });
+
+      setTimeout(() => {
+        this.setState({
+          success: false,
+          buttonTitle: 'Отправить',
+          // buttonColor: colors.button.normal,
+        });
+      }, 4500);
+    });
   }
+
 
   render() {
     const { classes, smena } = this.props
@@ -122,11 +173,18 @@ class Apply extends Component {
             Заполните короткую анкету. Мы перезвоним вам в течение дня и расскажем про дальнейшие шаги.
           </p>
           <form
-            id="gform-contact"
+            id="gform-apply"
             dataEmail="hello@kruzhok.io"
             onSubmit={this.handleFormSubmit}
             className={classes.form}
           >
+            <input
+              type="text"
+              name="smena"
+              value={smena.title}
+              style={{ display: 'none' }}
+              disabled
+            />
             <input
               type="text"
               name="name"

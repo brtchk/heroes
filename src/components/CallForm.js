@@ -4,6 +4,11 @@ import injectSheet from 'react-jss'
 
 import Button from './Button'
 
+import {
+  getFormData,
+  handleFormSubmit as submitForm
+} from '../helpers/google-form'
+
 import { colors, fonts, dimensions } from '../theme'
 
 const styles = {
@@ -35,8 +40,53 @@ class CallForm extends Component {
     }
   }
 
-  handleFormSubmit = e => {
-    e.preventDefault();
+  handleFormSubmit = event => {
+    event.preventDefault();
+    this.setState({
+      loading: true,
+      buttonTitle: 'Отправка...',
+    });
+
+    const formId = 'gform-call';
+    const data = getFormData(formId);
+
+    return submitForm('/macros/s/AKfycbz2AYMjeOoxRypyj4OubZl6hx4Ln58hQnJA0H7Pdg/exec', data)
+    .then(() => {
+      this.setState({
+        loading: false,
+        success: true,
+        buttonTitle: 'Отправлено',
+        // buttonColor: colors.button.success,
+      });
+
+      document.getElementById(formId).reset();
+
+      setTimeout(() => {
+        this.setState({
+          success: false,
+          buttonTitle: 'Отправить',
+          // buttonColor: colors.button.normal,
+        });
+      }, 4500);
+
+      return null;
+    })
+    .catch(() => {
+      this.setState({
+        loading: false,
+        success: false,
+        buttonTitle: 'Ошибка. Попробуйте еще раз',
+        // buttonColor: colors.button.error,
+      });
+
+      setTimeout(() => {
+        this.setState({
+          success: false,
+          buttonTitle: 'Отправить',
+          // buttonColor: colors.button.normal,
+        });
+      }, 4500);
+    });
   }
 
   render() {
@@ -51,7 +101,7 @@ class CallForm extends Component {
         }}
       >
         <form
-          id="gform-contact"
+          id="gform-call"
           dataEmail="hello@kruzhok.io"
           onSubmit={this.handleFormSubmit}
         >
