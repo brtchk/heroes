@@ -131,7 +131,7 @@ const SmenaView = ({
   classes,
   smena,
 }) => (
-  <div className={classes.container}>
+  <div className={`${classes.container} fade`}>
     <div className={classes.content}>
       <div className={classes.leftCol}>
         <p className={classes.text}>{smena.for}</p>

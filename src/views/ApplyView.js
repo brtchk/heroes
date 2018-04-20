@@ -134,7 +134,7 @@ class Apply extends Component {
     const { classes, smena } = this.props
 
     return (
-      <div className={classes.container}>
+      <div className={`${classes.container} fade`}>
         <div className={classes.formContainer}>
           <p className={classes.subtl}>
             {smena.for}

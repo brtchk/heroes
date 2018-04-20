@@ -94,7 +94,7 @@ class CallForm extends Component {
 
     return (
       <div
-        className={classes.container}
+        className={`${classes.container} fade`}
         style={{
           top: open ? 80 : -200,
           ...style,

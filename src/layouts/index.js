@@ -10,7 +10,7 @@ import './reset.css'
 import './index.css'
 
 const Layout = ({ children, data, location }) => (
-  <div>
+  <div className="fade">
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[

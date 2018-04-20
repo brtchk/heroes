@@ -212,7 +212,7 @@ const IndexPage = ({ classes }) => (
   <div className={classes.container}>
     <div className={classes.cover}>
       <div className={classes.overlay}>
-        <div className={classes.coverContent}>
+        <div className={`${classes.coverContent} fade`}>
           <h1 className={classes.coverTitle}>
             Летний лагерь
             <Logo style={{ height: 70, marginLeft: 25 }} />
