@@ -80,10 +80,15 @@ const styles = {
     height: 48,
     fontSize: fonts.size.xs,
     border: `3px solid ${colors.black}`,
+    backgroundColor: 'transparent',
+    cursor: 'pointer',
     '&:hover': {
       backgroundColor: colors.lightBlue,
       color: colors.white,
       borderColor: 'transparent',
+    },
+    '&:focus': {
+      outline: 'none',
     },
   }
 }
@@ -137,13 +142,12 @@ class Header extends Component {
                 <p>+7 499 450 56 06</p>
                 <p>hello@heroescamp.ru</p>
               </div>
-              <Link
-                to="#"
+              <button
                 className={classes.button}
                 onClick={this.handleClick}
               >
                 Заказать звонок
-              </Link>
+              </button>
             </div>
           </div>
         </div>
