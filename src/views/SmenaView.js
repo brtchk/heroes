@@ -4,7 +4,7 @@ import injectSheet from 'react-jss'
 
 import createMarkup from '../helpers/createMarkup'
 
-import Question from '../components/Question'
+import Point from '../components/Point'
 import Map from '../components/Map'
 import ImageGallery from '../components/ImageGallery'
 
@@ -209,7 +209,7 @@ const SmenaView = ({
         <p className={classes.title}>{smena.organization.title}</p>
         <div>
           {smena.organization.list.map(item => (
-            <Question
+            <Point
               question={item.title}
               answer={item.text}
             />
