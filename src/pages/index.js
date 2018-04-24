@@ -29,6 +29,7 @@ import member2 from '../static/member-2.jpg'
 import member3 from '../static/member-3.jpg'
 import member4 from '../static/member-4.jpg'
 import member5 from '../static/member-5.jpg'
+import member6 from '../static/member-6.jpg'
 
 import { colors, fonts, dimensions } from '../theme'
 
@@ -176,7 +177,9 @@ const styles = {
   members: {
     display: 'flex',
     justifyContent: 'space-between',
+    flexWrap: 'wrap',
     marginTop: 50,
+    maxWidth: 760,
   },
   faqBlock: {
     marginTop: 100,
@@ -343,6 +346,11 @@ const IndexPage = ({ classes }) => (
             image={member5}
             name="Евгений Дорошенко"
             desc="Руководитель выездных программ"
+          />
+          <Member
+            image={member6}
+            name="Виктор Захаров"
+            desc="Руководитель отдела продаж"
           />
         </div>
       </div>

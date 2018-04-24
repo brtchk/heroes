@@ -6,7 +6,8 @@ import { colors, fonts } from '../theme'
 
 const styles = {
   container: {
-    maxWidth: 190,
+    maxWidth: 242,
+    marginBottom: 40,
   },
   image: {
     width: '100%',
