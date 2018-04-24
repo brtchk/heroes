@@ -10,6 +10,7 @@ import Member from '../components/Member'
 import Question from '../components/Question'
 import Logo from '../components/Logo'
 import Map from '../components/Map'
+import ImageGallery from '../components/ImageGallery'
 
 import heroesWhite from '../static/heroes-white.svg'
 import bgImage from '../static/heroes-bg.jpg'
@@ -17,7 +18,6 @@ import cupImage from '../static/cup.png'
 import brilliantImage from '../static/brilliant.png'
 import mountainImage from '../static/mountain.png'
 import pinImage from '../static/pin.png'
-import image1 from '../static/index-img-1.jpg'
 import smena1 from '../static/smena-1.jpg'
 import smena2 from '../static/smena-2.jpg'
 import smena3 from '../static/smena-3.jpg'
@@ -30,6 +30,10 @@ import member3 from '../static/member-3.jpg'
 import member4 from '../static/member-4.jpg'
 import member5 from '../static/member-5.jpg'
 import member6 from '../static/member-6.jpg'
+import image1 from '../static/smena-1-1.jpg'
+import image2 from '../static/smena-1-2.jpg'
+import image3 from '../static/smena-1-3.jpg'
+import image4 from '../static/smena-1-4.jpg'
 
 import { colors, fonts, dimensions } from '../theme'
 
@@ -378,7 +382,9 @@ const IndexPage = ({ classes }) => (
         </div>
       </div>
       <div className={classes.sliderBlock}>
-        <img src={image1} className={classes.slider} />
+        <ImageGallery
+          images={[image1, image2, image3, image4].map(src => ({ original: src }))}
+        />
       </div>
       <div className={classes.faqBlock}>
         <p className={classes.title} id="faq">Ответы на вопросы</p>
