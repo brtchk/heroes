@@ -20,6 +20,7 @@ const styles = {
     paddingTop: 10,
     display: 'flex',
     justifyContent: 'space-between',
+    cursor: 'pointer',
   },
   answer: {
     paddingTop: 30,
@@ -47,12 +48,11 @@ export class Question extends Component {
 
     return (
       <div className={classes.container}>
-        <div className={classes.questionContainer}>
+        <div className={classes.questionContainer} onClick={this.handleOpen}>
           <p className={classes.question}>{question}</p>
           <Arrow
             width={20}
             color={colors.orange}
-            handleClick={this.handleOpen}
             style={{
               cursor: 'pointer',
               transition: 'all 0.3s ease',
