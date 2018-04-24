@@ -12,6 +12,68 @@ import image4 from '../static/smena-1-4.jpg'
 
 const images = [image1, image2, image3, image4];
 
+export const MEMBERS = [
+  {
+    name: 'Сергей Гуров',
+    desc: 'Генеральный директор',
+    image: require('../static/member-1.jpg'),
+  },
+  {
+    name: 'Наталья Карпова',
+    desc: 'Креативный директор',
+    image: require('../static/member-2.jpg'),
+  },
+  {
+    name: 'Елена Журавлева',
+    desc: 'Директор по развитию',
+    image: require('../static/member-3.jpg'),
+  },
+  {
+    name: 'Ольга Папкова',
+    desc: 'Руководитель образовательных программ',
+    image: require('../static/member-4.jpg'),
+  },
+  {
+    name: 'Евгений Дорошенко',
+    desc: 'Руководитель выездных программ, начальник лагеря',
+    image: require('../static/member-5.jpg'),
+  },
+  {
+    name: 'Виктор Захаров',
+    desc: 'Руководитель отдела продаж',
+    image: require('../static/member-6.jpg'),
+  },
+  {
+    name: 'Юлия Дорожинская',
+    desc: 'Методист, психолог',
+    image: require('../static/member-7.jpg'),
+  },
+  {
+    name: 'Иван Тороков',
+    desc: 'Инструктор',
+    image: require('../static/member-8.jpg'),
+  },
+  {
+    name: 'Николай Коваленко',
+    desc: 'Инструктор',
+    image: require('../static/member-9.jpg'),
+  },
+  {
+    name: 'Алексей Бажанов',
+    desc: 'Инструктор',
+    image: require('../static/member-10.jpg'),
+  },
+]
+
+const smenaMembers = [
+  MEMBERS[4],
+  MEMBERS[3],
+  MEMBERS[6],
+  MEMBERS[7],
+  MEMBERS[8],
+  MEMBERS[9],
+]
+
 export const SMENAS = [
   /*  SMENA I */
 
@@ -103,6 +165,10 @@ export const SMENAS = [
         'Подготовка ко сну',
         'Отбой',
       ],
+    },
+    team: {
+      title: 'Команда лагеря',
+      members: smenaMembers,
     },
     place: {
       title: 'Место',
@@ -235,6 +301,10 @@ export const SMENAS = [
         'Подготовка ко сну',
         'Отбой',
       ],
+    },
+    team: {
+      title: 'Команда лагеря',
+      members: smenaMembers,
     },
     place: {
       title: 'Место',
@@ -382,6 +452,10 @@ export const SMENAS = [
         'Отбой',
       ],
     },
+    team: {
+      title: 'Команда лагеря',
+      members: smenaMembers,
+    },
     place: {
       title: 'Место',
       text: 'Наша программа пройдет на территории оздоровительной базы отдыха «Боровое». База отдыха расположена на берегу реки Шерна, вдали от городского шума и суеты, среди густогохвойного леса, с его чистым воздухом. Участники программы будут жить в комфортабельных номерах со всеми удобствами.',
@@ -515,6 +589,10 @@ export const SMENAS = [
         'Подготовка ко сну',
         'Отбой',
       ],
+    },
+    team: {
+      title: 'Команда лагеря',
+      members: smenaMembers,
     },
     place: {
       title: 'Место',
@@ -650,6 +728,10 @@ export const SMENAS = [
         'Отбой',
       ],
     },
+    team: {
+      title: 'Команда лагеря',
+      members: smenaMembers,
+    },
     place: {
       title: 'Место',
       text: 'Наша программа пройдет на территории оздоровительной базы отдыха «Боровое». База отдыха расположена на берегу реки Шерна, вдали от городского шума и суеты, среди густогохвойного леса, с его чистым воздухом. Участники программы будут жить в комфортабельных номерах со всеми удобствами.',
@@ -781,6 +863,10 @@ export const SMENAS = [
         'Подготовка ко сну',
         'Отбой',
       ],
+    },
+    team: {
+      title: 'Команда лагеря',
+      members: smenaMembers,
     },
     place: {
       title: 'Место',

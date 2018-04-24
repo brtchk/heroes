@@ -11,6 +11,7 @@ import ImageGallery from '../components/ImageGallery'
 import AgeIcon from '../components/Icons/Age'
 import CalendarIcon from '../components/Icons/Calendar'
 import TimeIcon from '../components/Icons/Time'
+import Team from '../components/Team'
 
 import mainImage from '../static/smena-1-inside.jpg'
 import image1 from '../static/smena-1-1.jpg'
@@ -181,6 +182,10 @@ const SmenaView = ({
           <div className={classes.tableRight}>
             {smena.timeTable.event.map(item => <p>{item}</p>)}
           </div>
+        </div>
+        <p className={classes.title}>{smena.team.title}</p>
+        <div className={classes.teamContainer}>
+          <Team members={smena.team.members} />
         </div>
         <p className={classes.title}>{smena.place.title}</p>
         <p className={`${classes.text} ${classes.textBlock}`}>

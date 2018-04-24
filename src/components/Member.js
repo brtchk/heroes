@@ -23,8 +23,11 @@ const styles = {
   },
 }
 
-const Member = ({ classes, image, name, desc }) => (
-  <div className={classes.container}>
+const Member = ({ classes, style, image, name, desc }) => (
+  <div
+    className={classes.container}
+    style={style}
+  >
     <img className={classes.image} src={image} />
     <p className={classes.name}>{name}</p>
     <p className={classes.desc}>{desc}</p>
