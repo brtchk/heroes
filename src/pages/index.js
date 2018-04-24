@@ -104,11 +104,10 @@ const styles = {
     lineHeight: 1.3,
     color: colors.brown,
     fontSize: fonts.size.m,
-    // maxWidth: 815,
+    maxWidth: 815,
     width: 815,
   },
   content: {
-    maxWidth: dimensions.maxWidth,
     width: dimensions.maxWidth,
     margin: 'auto',
   },
@@ -117,6 +116,8 @@ const styles = {
     margin: '100px auto 65px',
     justifyContent: 'space-between',
     alignItems: 'baseline',
+    boxSizing: 'border-box',
+    width: dimensions.maxWidth,
   },
   title: {
     fontSize: fonts.size.xxl,

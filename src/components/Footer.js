@@ -20,6 +20,7 @@ const styles = {
     justifyContent: 'space-between',
     maxWidth: dimensions.maxWidth,
     minWidth: dimensions.maxWidth - 50,
+    width: '100%',
     margin: '0 auto',
     fontSize: fonts.size.xs,
   },
