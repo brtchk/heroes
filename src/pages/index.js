@@ -63,6 +63,7 @@ const styles = {
   coverTitle: {
     fontSize: fonts.size.xxl,
     marginBottom: 20,
+    width: dimensions.maxWidth,
   },
   coverSubtl: {
     fontSize: fonts.size.s,
@@ -71,6 +72,7 @@ const styles = {
     lineHeight: 0.5,
     margin: 'auto',
     marginBottom: 30,
+    width: dimensions.maxWidth,
   },
   button: {
     margin: '0 auto',
@@ -94,6 +96,7 @@ const styles = {
     minHeight: 345,
     padding: '50px 20px',
     display: 'flex',
+    minWidth: 815,
   },
   tagline: {
     margin: 'auto',
@@ -101,7 +104,8 @@ const styles = {
     lineHeight: 1.3,
     color: colors.brown,
     fontSize: fonts.size.m,
-    maxWidth: 815,
+    // maxWidth: 815,
+    width: 815,
   },
   content: {
     maxWidth: dimensions.maxWidth,
@@ -239,9 +243,9 @@ const IndexPage = ({ classes }) => (
       </div>
     </div>
     <div className={classes.taglineContainer}>
-      <p className={classes.tagline}>
+      <div className={classes.tagline}>
         ГЕРОИ — это больше, чем летний детский лагерь. Значительнее, чем активный отдых на природе. Интенсивнее, чем подготовительные курсы. Ярче, чем выездной туризм. Лагерь ГЕРОИ — это среда обитания настоящего победителя.
-      </p>
+      </div>
     </div>
     <div className={classes.content}>
       <div className={classes.thesises}>

@@ -18,6 +18,7 @@ const Layout = ({ children, data, location }) => (
         { name: 'description', content: 'Территория раскрытия возможностей' },
         { name: 'keywords', content: 'heroes, camp, heroescamp' },
         { name: 'og:image', content: fbGraph },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ]}
     />
     {
