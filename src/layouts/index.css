@@ -110,3 +110,40 @@ button {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
+.fade-up {
+  -webkit-animation: fadeup 0.3s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadeup 0.3s; /* Firefox < 16 */
+      -ms-animation: fadeup 0.3s; /* Internet Explorer */
+       -o-animation: fadeup 0.3s; /* Opera < 12.1 */
+          animation: fadeup 0.3s;
+}
+
+@keyframes fadeup {
+    from { transform: translateY(30px); }
+    to   { transform: translateY(0); }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeup {
+    from { transform: translateY(30px); }
+    to   { transform: translateY(0); }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeup {
+    from { transform: translateY350px); }
+    to   { transform: translateY(0); }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeup {
+    from { transform: translateY(30px); }
+    to   { transform: translateY(0); }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeup {
+    from { transform: translateY(30px); }
+    to   { transform: translateY(0); }
+}

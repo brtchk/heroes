@@ -5,17 +5,19 @@ import Helmet from 'react-helmet'
 import Header from '../components/Header'
 import HeaderFixed from '../components/HeaderFixed'
 import Footer from '../components/Footer'
+import fbGraph from '../static/fb-graph.png'
 
 import './reset.css'
 import './index.css'
 
 const Layout = ({ children, data, location }) => (
-  <div className="fade">
+  <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'Территория раскрытия возможностей' },
+        { name: 'keywords', content: 'heroes, camp, heroescamp' },
+        { name: 'og:image', content: fbGraph },
       ]}
     />
     {

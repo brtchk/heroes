@@ -209,7 +209,7 @@ const styles = {
 }
 
 const IndexPage = ({ classes }) => (
-  <div className={classes.container}>
+  <div className={`${classes.container} fade`}>
     <div className={classes.cover}>
       <div className={classes.overlay}>
         <div className={`${classes.coverContent} fade`}>
