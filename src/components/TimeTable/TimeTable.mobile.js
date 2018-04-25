@@ -27,7 +27,7 @@ const SmenaView = ({
 }) => (
   <div className={classes.container}>
     {timeTable.time.map((item, index) => (
-      <div className={classes.tableItem}>
+      <div className={classes.tableItem} key={item}>
         <p>{item}</p>
         <p>{timeTable.event[index]}</p>
       </div>

@@ -167,6 +167,7 @@ class HeaderMobile extends Component {
             >
               {menuItems.map(item => (
                 <Scroll
+                  key={item.title}
                   type="id"
                   element={item.route}
                   handleClick={() => { this.setState({ isMenuOpen: false }); }}

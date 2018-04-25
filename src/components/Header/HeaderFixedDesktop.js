@@ -112,7 +112,7 @@ class Header extends Component {
                   offset={-300}
                 >
                   {menuItems.map(item => (
-                    <Scroll type="id" element={item.route}>
+                    <Scroll type="id" element={item.route} key={item.title}>
                       <a
                         href="#"
                         className={classes.link}

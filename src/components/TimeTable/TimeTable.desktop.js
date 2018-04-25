@@ -32,10 +32,10 @@ const SmenaView = ({
   <div className={classes.container}>
     <div className={classes.timeTable}>
       <div className={classes.tableLeft}>
-        {timeTable.time.map(item => <p>{item}</p>)}
+        {timeTable.time.map(item => <p key={item}>{item}</p>)}
       </div>
       <div className={classes.tableRight}>
-        {timeTable.event.map(item => <p>{item}</p>)}
+        {timeTable.event.map(item => <p key={item}>{item}</p>)}
       </div>
     </div>
   </div>

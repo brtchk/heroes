@@ -81,7 +81,6 @@ class Apply extends Component {
         loading: false,
         success: true,
         buttonTitle: 'Отправлено',
-        // buttonColor: colors.button.success,
       });
 
       document.getElementById(formId).reset();
@@ -90,7 +89,6 @@ class Apply extends Component {
         this.setState({
           success: false,
           buttonTitle: 'Отправить',
-          // buttonColor: colors.button.normal,
         });
       }, 4500);
 
@@ -101,14 +99,12 @@ class Apply extends Component {
         loading: false,
         success: false,
         buttonTitle: 'Ошибка. Попробуйте еще раз',
-        // buttonColor: colors.button.error,
       });
 
       setTimeout(() => {
         this.setState({
           success: false,
           buttonTitle: 'Отправить',
-          // buttonColor: colors.button.normal,
         });
       }, 4500);
     });

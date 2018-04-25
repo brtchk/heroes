@@ -19,7 +19,7 @@ const styles = {
   },
 }
 
-const Button = ({ classes, title, handler, ...props }) => {
+const Button = ({ classes, title, handler, sheet, ...props }) => {
   return (
     <div>
       <button

@@ -296,21 +296,21 @@ const SmenaView = ({
         <img src={smena.image} className={classes.image} />
         <p className={classes.title}>{smena.program.title}</p>
         <ul className={`${classes.list} ${classes.text} ${classes.textBlock}`}>
-          {smena.program.list.map(item => <li>{item}</li>)}
+          {smena.program.list.map(item => <li key={item}>{item}</li>)}
         </ul>
         <div className={classes.highlightBlock}>
           {smena.program.highlight}
         </div>
         <p className={classes.title}>{smena.programDesc.title}</p>
         <ul className={`${classes.list} ${classes.text} ${classes.textBlock}`}>
-          {smena.programDesc.list.map(item => <li>{item}</li>)}
+          {smena.programDesc.list.map(item => <li key={item}>{item}</li>)}
         </ul>
         <p className={classes.title}>{smena.base.title}</p>
         <p className={`${classes.text} ${classes.textBlock}`}>
           {smena.base.text}
         </p>
         <ul className={`${classes.list} ${classes.text} ${classes.textBlock}`}>
-          {smena.base.list.map(item => <li>{item}</li>)}
+          {smena.base.list.map(item => <li key={item}>{item}</li>)}
         </ul>
         <p className={classes.smallText}>
           {smena.base.note}
@@ -353,6 +353,7 @@ const SmenaView = ({
         <div className={classes.oraganisationConatiner}>
           {smena.organization.list.map(item => (
             <Point
+              key={item.title}
               question={item.title}
               answer={item.text}
             />

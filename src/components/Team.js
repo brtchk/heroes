@@ -24,6 +24,7 @@ const Team = ({ classes, members }) => (
     {
       members.map(member => (
         <Member
+          key={member.name}
           style={{
             maxWidth: 190
           }}
