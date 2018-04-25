@@ -78,6 +78,8 @@ const styles = {
     alignItems: 'flex-end',
     position: 'absolute',
     bottom: 30,
+    left: '50%',
+    transform: 'translateX(-50%)',
     [media.lessThan('small')]: {
       fontSize: fonts.size.xxxs,
     },
@@ -104,9 +106,7 @@ const Card = ({
           </p>
         </div>
         <p className={classes.title}>{title}</p>
-        <div className={classes.bottomBlock}>
-          <p className={classes.text}>{text}</p>
-        </div>
+        <p className={`${classes.bottomBlock} ${classes.text}`}>{text}</p>
       </div>
     </div>
   </Link>
