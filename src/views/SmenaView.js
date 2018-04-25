@@ -12,13 +12,15 @@ import AgeIcon from '../components/Icons/Age'
 import CalendarIcon from '../components/Icons/Calendar'
 import TimeIcon from '../components/Icons/Time'
 import Team from '../components/Team'
+import TimeTable from '../components/TimeTable/TimeTable'
+import SmenaInfo from '../components/SmenaInfo'
 
 import mainImage from '../static/smena-1-inside.jpg'
 import image1 from '../static/smena-1-1.jpg'
 import image2 from '../static/smena-1-2.jpg'
 import image3 from '../static/smena-1-3.jpg'
 
-import { colors, fonts, dimensions } from '../theme'
+import { colors, fonts, dimensions, media } from '../theme'
 
 const styles = {
   container: {
@@ -26,6 +28,12 @@ const styles = {
     paddingBottom: 150,
     color: colors.brown,
     lineHeight: 1.3,
+    [media.lessThan('medium')]: {
+      paddingBottom: 120,
+    },
+    [media.lessThan('small')]: {
+      paddingBottom: 80,
+    },
   },
   content: {
     maxWidth: dimensions.maxWidth,
@@ -33,22 +41,49 @@ const styles = {
     margin: 'auto',
     display: 'flex',
     justifyContent: 'space-between',
+    [media.lessThan('large')]: {
+      maxWidth: '100%',
+    },
   },
   leftCol: {
     maxWidth: 740,
+    [media.lessThan('large')]: {
+      maxWidth: '100%',
+    },
   },
   rightCol: {
     position: 'relative',
     width: 250,
+    [media.lessThan('large')]: {
+      display: 'none',
+    },
   },
   textBlock: {
     margin: '30px 0',
   },
   text: {
     fontSize: fonts.size.m,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxs,
+    },
+    [media.lessThan('medium')]: {
+      fontSize: fonts.size.xs,
+    },
+    [media.lessThan('large')]: {
+      padding: `0 ${dimensions.padding.horizontal}px`,
+    },
   },
   smallText: {
     fontSize: fonts.size.xs,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxxs,
+    },
+    [media.lessThan('medium')]: {
+      fontSize: fonts.size.xxs,
+    },
+    [media.lessThan('large')]: {
+      padding: `0 ${dimensions.padding.horizontal}px`,
+    },
   },
   title: {
     fontSize: fonts.size.xxl - 7,
@@ -56,6 +91,28 @@ const styles = {
     marginBottom: 50,
     marginTop: 40,
     lineHeight: 1,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.m,
+    },
+    [media.lessThan('medium')]: {
+      fontSize: fonts.size.l,
+    },
+    [media.lessThan('large')]: {
+      padding: `0 ${dimensions.padding.horizontal}px`,
+    },
+  },
+  smenaInfo: {
+    fontSize: fonts.size.s,
+    padding: `0 ${dimensions.padding.horizontal}px`,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxs,
+    },
+    [media.lessThan('medium')]: {
+      fontSize: fonts.size.xs,
+    },
+    [media.greaterThan('large')]: {
+      display: 'none',
+    },
   },
   highlight: {
     color: colors.orange,
@@ -65,6 +122,15 @@ const styles = {
     padding: '60px 30px',
     margin: '50px 0',
     textAlign: 'center',
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxs,
+    },
+    [media.lessThan('medium')]: {
+      fontSize: fonts.size.xs,
+    },
+    [media.lessThan('large')]: {
+      width: '100%',
+    },
   },
   image: {
     width: '100%',
@@ -80,9 +146,43 @@ const styles = {
     '& p': {
       marginBottom: 10,
     },
+    [media.lessThan('large')]: {
+      padding: `0 ${dimensions.padding.horizontal}px`,
+    },
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxs,
+    },
   },
   tableLeft: {
     marginRight: 90,
+  },
+  teamContainer: {
+    [media.lessThan('large')]: {
+      padding: `0 ${dimensions.padding.horizontal}px`,
+    },
+  },
+  placeInfo: {
+    display: 'flex',
+    fontSize: fonts.size.xxs,
+    marginBottom: 50,
+    [media.lessThan('large')]: {
+      padding: `0 ${dimensions.padding.horizontal}px`,
+    },
+    [media.lessThan('small')]: {
+      flexDirection: 'column',
+    },
+  },
+  placeInfoItem: {
+    maxWidth: 285,
+    width: '100%',
+    [media.lessThan('small')]: {
+      marginBottom: 30,
+    },
+  } ,
+  oraganisationConatiner: {
+    [media.lessThan('large')]: {
+      padding: `0 ${dimensions.padding.horizontal}px`,
+    },
   },
   apply: {
     width: 245,
@@ -126,6 +226,42 @@ const styles = {
       borderColor: 'transparent',
     },
   },
+  mobileApply: {
+    color: colors.white,
+    backgroundColor: colors.orange,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    position: 'fixed',
+    zIndex: 99,
+    width: '100%',
+    height: 100,
+    left: 0,
+    bottom: 0,
+    padding: `10px ${dimensions.padding.horizontal}px`,
+    [media.greaterThan('large')]: {
+      display: 'none',
+    },
+  },
+  mobileApplyLeft: {
+    width: '50%',
+  },
+  mobileApplyRight: {
+    width: '50%',
+    maxWidth: 200,
+    fontSize: `${fonts.size.xxs}px !important`,
+    textAlign: 'right',
+  },
+  mobileApplyTitle: {
+    fontSize: fonts.size.xs,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxs,
+    },
+  },
+  mobileApplySmallText: {
+    fontSize: fonts.size.xxxs,
+    marginBottom: 10,
+  },
 }
 
 const SmenaView = ({
@@ -139,6 +275,14 @@ const SmenaView = ({
         <p className={classes.title} style={{ marginTop: 0 }}>
           {smena.title}
         </p>
+        <SmenaInfo
+          smena={{
+            age: smena.age,
+            date: smena.date,
+            time: smena.time,
+          }}
+          className={classes.smenaInfo}
+        />
         <p
           className={`${classes.text} ${classes.textBlock}`}
           dangerouslySetInnerHTML={createMarkup(smena.intro.text1)}
@@ -175,14 +319,7 @@ const SmenaView = ({
           {smena.base.highlight}
         </div>
         <p className={classes.title}>{smena.timeTable.title}</p>
-        <div className={classes.timeTable}>
-          <div className={classes.tableLeft}>
-            {smena.timeTable.time.map(item => <p>{item}</p>)}
-          </div>
-          <div className={classes.tableRight}>
-            {smena.timeTable.event.map(item => <p>{item}</p>)}
-          </div>
-        </div>
+        <TimeTable timeTable={smena.timeTable} />
         <p className={classes.title}>{smena.team.title}</p>
         <div className={classes.teamContainer}>
           <Team members={smena.team.members} />
@@ -191,16 +328,17 @@ const SmenaView = ({
         <p className={`${classes.text} ${classes.textBlock}`}>
           {smena.place.text}
         </p>
-        <div style={{
-          display: 'flex',
-          fontSize: fonts.size.xxs,
-          marginBottom: 50,
-        }}>
-          <div style={{ maxWidth: 285, marginRight: 50 }}>
+        <div className={classes.placeInfo}>
+          <div
+            className={classes.placeInfoItem}
+            style={{ marginRight: 50 }}
+          >
             <p className={classes.highlight}>Адрес</p>
             <p>{smena.place.address}</p>
           </div>
-          <div style={{ maxWidth: 285 }}>
+          <div
+            className={classes.placeInfoItem}
+          >
             <p className={classes.highlight}>Безопасность</p>
             <p>{smena.place.safety}</p>
           </div>
@@ -212,7 +350,7 @@ const SmenaView = ({
           images={smena.place.images.map(src => ({ original: src }))}
         />
         <p className={classes.title}>{smena.organization.title}</p>
-        <div>
+        <div className={classes.oraganisationConatiner}>
           {smena.organization.list.map(item => (
             <Point
               question={item.title}
@@ -256,6 +394,27 @@ const SmenaView = ({
           <Link
             to={smena.applyRoute}
             className={classes.button}
+          >
+            Отправить заявку
+          </Link>
+        </div>
+      </div>
+
+      <div className={classes.mobileApply}>
+        <div className={classes.mobileApplyLeft}>
+          <p className={classes.mobileApplyTitle}>{smena.title}</p>
+        </div>
+        <div className={classes.mobileApplyRight}>
+          <p className={classes.mobileApplySmallText}>
+            {`${smena.price} рублей`}
+          </p>
+          <Link
+            to={smena.applyRoute}
+            className={classes.button}
+            style={{
+              fontSize: fonts.size.xxs,
+              marginTop: 0,
+            }}
           >
             Отправить заявку
           </Link>

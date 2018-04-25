@@ -3,39 +3,16 @@ import Link from 'gatsby-link'
 import Scrollspy from 'react-scrollspy'
 import injectSheet from 'react-jss'
 
-import Scroll from './Scroll'
-import Logo from './Logo'
-import CallForm from './CallForm'
+import Scroll from '../Scroll'
+import Logo from '../Logo'
+import CallForm from '../CallForm'
 
-import { colors, fonts, dimensions } from '../theme'
-
-const menuItems = [
-  {
-    title: 'Смены',
-    route: 'smena',
-  },
-  {
-    title: 'Команда',
-    route: 'team',
-  },
-  {
-    title: 'Место',
-    route: 'place',
-  },
-  {
-    title: 'FAQ',
-    route: 'faq',
-  },
-]
+import { colors, fonts, dimensions } from '../../theme'
 
 const styles = {
-  root: {
-    position: 'relative',
-  },
   bg: {
     backgroundColor: colors.orange,
     color: colors.black,
-    position: 'fixed',
     top: 0,
     width: '100%',
     zIndex: 100,
@@ -46,6 +23,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-between',
     maxWidth: dimensions.maxWidth,
+    minWidth: dimensions.maxWidth - 50,
     margin: '0 auto',
   },
   leftBlock: {
@@ -101,17 +79,17 @@ class Header extends Component {
     super(props)
 
     this.state = {
-      callOpen: false,
+      open: false,
     }
   }
 
   handleClick = () => {
-    this.setState({ callOpen: !this.state.callOpen })
+    this.setState({ open: !this.state.open })
   }
 
   render() {
-    const { classes } = this.props
-    const { callOpen } = this.state
+    const { classes, menuItems } = this.props
+    const { open } = this.state
 
     return (
       <div className={classes.root}>
@@ -126,20 +104,20 @@ class Header extends Component {
               </Link>
               <div className={classes.menuItems}>
                 <Scrollspy
-                  items={ ['smena', 'team', 'place', 'faq'] }
+                  items={['smena', 'team', 'place', 'faq']}
                   currentClassName="is-active"
                   offset={-300}
                 >
                   {menuItems.map(item => (
-                    <Scroll type="id" element={item.route}>
-                      <a
-                        href="#"
-                        className={classes.link}
-                        style={{ fontSize: fonts.size.s }}
-                      >
-                        {item.title}
-                      </a>
-                    </Scroll>
+                    <Link
+                      key={item.title}
+                      className={classes.link}
+                      style={{ fontSize: fonts.size.s }}
+                      to={item.route}
+                    >
+                      {item.title}
+                    </Link>
+
                   ))}
                 </Scrollspy>
               </div>
@@ -158,7 +136,7 @@ class Header extends Component {
             </div>
           </div>
         </div>
-        {callOpen && <CallForm open={callOpen} />}
+        {open && <CallForm open={open} style={{ position: 'absolute' }} />}
       </div>
     )
   }

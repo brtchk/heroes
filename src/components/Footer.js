@@ -22,7 +22,7 @@ const styles = {
     width: '100%',
     margin: '0 auto',
     fontSize: fonts.size.xs,
-    [media.lessThan('small')]: {
+    [media.lessThan('large')]: {
       fontSize: fonts.size.xxs,
       flexDirection: 'column',
       alignItems: 'flex-start',
@@ -35,7 +35,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     width: '75%',
-    [media.lessThan('small')]: {
+    [media.lessThan('large')]: {
       flexDirection: 'column',
       alignItems: 'flex-start',
       width: '100%',
@@ -45,13 +45,13 @@ const styles = {
     },
   },
   right: {
-    [media.lessThan('small')]: {
+    [media.lessThan('large')]: {
       marginTop: 30,
     },
   },
   fb: {
     width: 45,
-    [media.lessThan('small')]: {
+    [media.lessThan('large')]: {
       width: 30,
     },
   },

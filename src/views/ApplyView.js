@@ -3,9 +3,7 @@ import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
 
 import Button from '../components/Button'
-import AgeIcon from '../components/Icons/Age'
-import CalendarIcon from '../components/Icons/Calendar'
-import TimeIcon from '../components/Icons/Time'
+import SmenaInfo from '../components/SmenaInfo'
 
 import {
   getFormData,
@@ -45,21 +43,6 @@ const styles = {
   },
   price: {
     fontSize: fonts.size.xs,
-  },
-  applyInfoContainer: {
-    display: 'flex',
-    marginBottom: 20,
-  },
-  applyInfoChild: {
-    display: 'flex',
-    alignItems: 'center',
-    margin: '8px 0',
-    marginRight: 30,
-  },
-  applyInfoText: {
-    fontSize: fonts.size.xxs,
-    display: 'inline-block',
-    marginLeft: 10,
   },
   privacyText: {
     marginTop: 20,
@@ -143,32 +126,13 @@ class Apply extends Component {
             <p className={classes.title}>{smena.title}</p>
             <p className={classes.price}>{smena.price} рублей</p>
           </div>
-          <div className={classes.applyInfoContainer}>
-            <p className={classes.applyInfoChild}>
-              <AgeIcon
-                color={colors.brown}
-                width={22}
-                className={classes.icon}
-              />
-              <span className={classes.applyInfoText}>{smena.age}</span>
-            </p>
-            <p className={classes.applyInfoChild}>
-              <CalendarIcon
-                color={colors.brown}
-                width={22}
-                className={classes.icon}
-              />
-              <span className={classes.applyInfoText}>{smena.date}</span>
-            </p>
-            <p className={classes.applyInfoChild}>
-              <TimeIcon
-                color={colors.brown}
-                width={22}
-                className={classes.icon}
-              />
-              <span className={classes.applyInfoText}>{smena.time}</span>
-            </p>
-          </div>
+          <SmenaInfo
+            smena={{
+              age: smena.age,
+              date: smena.date,
+              time: smena.time,
+            }}
+          />
           <p className={classes.subtl}>
             Заполните короткую анкету. Мы перезвоним вам в течение дня и расскажем про дальнейшие шаги.
           </p>

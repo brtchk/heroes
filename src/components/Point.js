@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
 
-import { colors, fonts } from '../theme'
+import { colors, fonts, media } from '../theme'
 
 const styles = {
   container: {
@@ -14,6 +14,9 @@ const styles = {
     color: colors.orange,
     paddingLeft: 40,
     maxWidth: 440,
+    [media.lessThan('small')]: {
+      paddingLeft: 20,
+    },
   },
   answer: {
     color: colors.brown,

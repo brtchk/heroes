@@ -9,7 +9,7 @@ const styles = {
     maxWidth: 242,
     marginBottom: 40,
     [media.lessThan('small')]: {
-      maxWidth: '45%',
+      maxWidth: '45% !important',
     },
   },
   image: {

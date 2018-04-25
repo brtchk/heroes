@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/Header'
+import Header from '../components/Header/Header'
 import HeaderFixed from '../components/Header/HeaderFixed'
 import Footer from '../components/Footer'
 import fbGraph from '../static/fb-graph.png'

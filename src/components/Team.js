@@ -4,7 +4,7 @@ import injectSheet from 'react-jss'
 
 import Member from './Member'
 
-import { colors, fonts } from '../theme'
+import { colors, fonts, media } from '../theme'
 
 const styles = {
   container: {
@@ -13,6 +13,9 @@ const styles = {
     flexWrap: 'wrap',
     marginTop: 50,
     maxWidth: 620,
+    [media.lessThan('medium')]: {
+      justifyContent: 'space-around',
+    },
   },
 }
 
