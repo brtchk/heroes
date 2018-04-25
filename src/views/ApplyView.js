@@ -10,7 +10,7 @@ import {
   handleFormSubmit as submitForm
 } from '../helpers/google-form'
 
-import { colors, fonts, dimensions } from '../theme'
+import { colors, fonts, dimensions, media } from '../theme'
 
 const styles = {
   container: {
@@ -22,12 +22,14 @@ const styles = {
     paddingBottom: 100,
   },
   formContainer: {
-    width: 500,
+    maxWidth: 500,
     margin: 'auto',
+    [media.lessThan('large')]: {
+      padding: `0 ${dimensions.padding.horizontal}px`,
+    },
   },
   form: {
     marginTop: 20,
-
   },
   subtl: {
     fontSize: fonts.size.xxs,

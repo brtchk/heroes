@@ -15,7 +15,7 @@ const styles = {
     maxWidth: 500,
     color: colors.black,
     lineHeight: 1.3,
-    padding: '100px 0',
+    padding: '100px 20px',
     fontSize: fonts.size.xxs,
     margin: '0 auto',
   },

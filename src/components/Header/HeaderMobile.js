@@ -169,18 +169,13 @@ class HeaderMobile extends Component {
               offset={-300}
             >
               {menuItems.map(item => (
-                <Scroll
-                  type="id"
-                  element={item.route}
-                  handleClick={() => { this.setState({ isMenuOpen: false }); }}
+                <Link
+                  key={item.title}
+                  className={classes.link}
+                  to={item.route}
                 >
-                  <a
-                    href="#"
-                    className={classes.link}
-                  >
                     {item.title}
-                  </a>
-                </Scroll>
+                </Link>
               ))}
             </Scrollspy>
             <div className={`${classes.info} ${classes.infoText}`}>
