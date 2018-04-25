@@ -5,15 +5,18 @@ import injectSheet from 'react-jss'
 import Calendar from './Icons/Calendar'
 import Age from './Icons/Age'
 
-import { colors, fonts } from '../theme'
+import { colors, fonts, media } from '../theme'
 
 const styles = {
   container: {
-    width: 500,
+    width: 490,
     height: 330,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     marginBottom: 24,
+    [media.lessThan('large')]: {
+      width: '100%',
+    },
   },
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -33,6 +36,9 @@ const styles = {
     fontSize: fonts.size.l,
     margin: 'auto',
     maxWidth: '90%',
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.m,
+    },
   },
   text: {
     width: '85%',
@@ -46,6 +52,9 @@ const styles = {
     position: 'absolute',
     left: 20,
     top: 20,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxxs,
+    },
   },
   infoChild: {
     marginLeft: 5,
@@ -58,6 +67,10 @@ const styles = {
   },
   icon: {
     marginRight: 10,
+    [media.lessThan('small')]: {
+      maxHeight: 20,
+      marginRight: 7,
+    },
   },
   bottomBlock: {
     fontSize: fonts.size.xxs,
@@ -65,6 +78,9 @@ const styles = {
     alignItems: 'flex-end',
     position: 'absolute',
     bottom: 30,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxxs,
+    },
   },
 }
 

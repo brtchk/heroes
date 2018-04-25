@@ -2,12 +2,15 @@ import React from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
 
-import { colors, fonts } from '../theme'
+import { colors, fonts, media } from '../theme'
 
 const styles = {
   container: {
     maxWidth: 242,
     marginBottom: 40,
+    [media.lessThan('small')]: {
+      maxWidth: '45%',
+    },
   },
   image: {
     width: '100%',

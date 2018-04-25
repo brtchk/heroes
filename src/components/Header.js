@@ -122,7 +122,11 @@ class Header extends Component {
                 <Logo color={colors.black} style={{ height: 40 }} />
               </Link>
               <div className={classes.menuItems}>
-                <Scrollspy items={ ['smena', 'team', 'place', 'faq'] } currentClassName="is-active" offset={-300}>
+                <Scrollspy
+                  items={['smena', 'team', 'place', 'faq']}
+                  currentClassName="is-active"
+                  offset={-300}
+                >
                   {menuItems.map(item => (
                     <Link
                       key={item.title}

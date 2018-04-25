@@ -4,7 +4,7 @@ import injectSheet from 'react-jss'
 import { Collapse } from 'react-collapse'
 
 import Arrow from './Icons/Arrow'
-import { colors, fonts } from '../theme'
+import { colors, fonts, media } from '../theme'
 
 const styles = {
   container: {
@@ -12,6 +12,9 @@ const styles = {
     borderTop: `2px solid ${colors.brown}`,
     marginBottom: 40,
     lineHeight: 1.3,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxs,
+    },
   },
   question: {
     color: colors.brown,

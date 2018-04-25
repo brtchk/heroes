@@ -46,7 +46,6 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-between',
     maxWidth: dimensions.maxWidth,
-    minWidth: dimensions.maxWidth - 50,
     margin: '0 auto',
   },
   leftBlock: {

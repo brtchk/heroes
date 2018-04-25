@@ -35,7 +35,7 @@ import image2 from '../static/smena-1-2.jpg'
 import image3 from '../static/smena-1-3.jpg'
 import image4 from '../static/smena-1-4.jpg'
 
-import { colors, fonts, dimensions } from '../theme'
+import { colors, fonts, dimensions, media } from '../theme'
 
 const styles = {
   container: {
@@ -60,19 +60,34 @@ const styles = {
   coverContent: {
     margin: 'auto',
   },
+  logo: {
+    boxSizing: 'content-box',
+    height: 70,
+    padding: '0 25px',
+    [media.lessThan('small')]: {
+      height: 40,
+      padding: '0 15px',
+    },
+  },
   coverTitle: {
     fontSize: fonts.size.xxl,
     marginBottom: 20,
-    width: dimensions.maxWidth,
+    maxWidth: dimensions.maxWidth,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xl + 25,
+    },
   },
   coverSubtl: {
+    lineHeight: 1.2,
     fontSize: fonts.size.s,
     fontSize: 44,
+    width: '80%',
     maxWidth: 900,
-    lineHeight: 0.5,
     margin: 'auto',
     marginBottom: 30,
-    width: dimensions.maxWidth,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xs,
+    },
   },
   button: {
     margin: '0 auto',
@@ -90,13 +105,18 @@ const styles = {
       color: colors.white,
       borderColor: 'transparent',
     },
+    [media.lessThan('small')]: {
+      width: 180,
+      height: 50,
+      marginTop: 30,
+      fontSize: fonts.size.xxs,
+    },
   },
   taglineContainer: {
     backgroundColor: colors.lightBlue,
     minHeight: 345,
     padding: '50px 20px',
     display: 'flex',
-    minWidth: 815,
   },
   tagline: {
     margin: 'auto',
@@ -105,11 +125,16 @@ const styles = {
     color: colors.brown,
     fontSize: fonts.size.m,
     maxWidth: 815,
-    width: 815,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xs,
+    },
   },
   content: {
-    width: dimensions.maxWidth,
     margin: 'auto',
+    maxWidth: dimensions.maxWidth,
+    [media.lessThan('large')]: {
+      padding: '0 20px',
+    },
   },
   thesises: {
     display: 'flex',
@@ -117,18 +142,29 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'baseline',
     boxSizing: 'border-box',
-    width: dimensions.maxWidth,
+    [media.lessThan('small')]: {
+      width: '100%',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      margin: '50px auto 25px',
+    },
   },
   title: {
     fontSize: fonts.size.xxl,
     paddingTop: 100,
     marginTop: -100,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xl + 5,
+    },
   },
   subtl: {
     fontSize: fonts.size.xs,
     maxWidth: 650,
     lineHeight: 1.3,
     marginTop: 20,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxs,
+    },
   },
   block: {
     marginTop: 70,
@@ -141,21 +177,38 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    [media.lessThan('large')]: {
+      flexWrap: 'nowrap',
+      flexDirection: 'column',
+    },
   },
   cardsSubtl: {
     textAlign: 'center',
     fontSize: fonts.size.xs,
+    lineHeight: 1.3,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxs,
+    },
   },
   placeContent: {
     display: 'flex',
     marginTop: 30,
+    [media.lessThan('medium')]: {
+      flexDirection: 'column',
+    },
   },
   placeLeft: {
     width: '60%',
+    [media.lessThan('medium')]: {
+      width: '100%',
+    },
   },
   placeRight: {
     padding: '30px 50px',
     display: 'flex',
+    [media.lessThan('medium')]: {
+      padding: '30px 0',
+    },
   },
   placeInfo: {
     fontSize: fonts.size.xs,
@@ -164,15 +217,23 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     maxWidth: 450,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxs,
+    },
   },
   placeInfoIcon: {
     display: 'inline-block',
     marginRight: 20,
+    [media.lessThan('small')]: {
+      display: 'none',
+    },
   },
   mapUnderlay: {
     width: 261,
-    height: 404,
     margin: 'auto',
+    [media.lessThan('medium')]: {
+      width: '100%',
+    },
   },
   sliderBlock: {
     marginTop: 70,
@@ -189,6 +250,9 @@ const styles = {
     flexWrap: 'wrap',
     marginTop: 50,
     maxWidth: 760,
+    [media.lessThan('medium')]: {
+      justifyContent: 'space-around',
+    },
   },
   faqBlock: {
     marginTop: 100,
@@ -217,6 +281,9 @@ const styles = {
   },
   moreSubtl: {
     fontSize: fonts.size.s,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xs,
+    },
   },
 }
 
@@ -227,7 +294,7 @@ const IndexPage = ({ classes }) => (
         <div className={`${classes.coverContent} fade`}>
           <h1 className={classes.coverTitle}>
             Летний лагерь
-            <Logo style={{ height: 70, marginLeft: 25 }} />
+            <Logo className={classes.logo} />
           </h1>
           <p className={classes.coverSubtl}>
             Территория раскрытия возможностей
