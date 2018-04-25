@@ -18,10 +18,10 @@ const styles = {
     padding: '40px 30px 20px',
     backgroundColor: colors.grey.light,
     position: 'fixed',
-    zIndex: 99,
+    zIndex: 101,
     top: -100,
     right: `calc(50% - ${dimensions.maxWidth / 2}px)`,
-    transition: 'top 1s ease',
+    transition: 'top 0.3s ease',
   },
   note: {
     textAlign: 'center',

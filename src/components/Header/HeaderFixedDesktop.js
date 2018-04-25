@@ -3,30 +3,11 @@ import Link from 'gatsby-link'
 import Scrollspy from 'react-scrollspy'
 import injectSheet from 'react-jss'
 
-import Scroll from './Scroll'
-import Logo from './Logo'
-import CallForm from './CallForm'
+import Scroll from '../Scroll'
+import Logo from '../Logo'
+import CallForm from '../CallForm'
 
-import { colors, fonts, dimensions } from '../theme'
-
-const menuItems = [
-  {
-    title: 'Смены',
-    route: 'smena',
-  },
-  {
-    title: 'Команда',
-    route: 'team',
-  },
-  {
-    title: 'Место',
-    route: 'place',
-  },
-  {
-    title: 'FAQ',
-    route: 'faq',
-  },
-]
+import { colors, fonts, dimensions } from '../../theme'
 
 const styles = {
   root: {
@@ -110,7 +91,7 @@ class Header extends Component {
   }
 
   render() {
-    const { classes } = this.props
+    const { classes, menuItems } = this.props
     const { callOpen } = this.state
 
     return (

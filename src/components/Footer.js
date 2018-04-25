@@ -4,7 +4,7 @@ import injectSheet from 'react-jss'
 
 import fbIcon from '../static/fb.png'
 
-import { colors, fonts, dimensions } from '../theme'
+import { colors, fonts, dimensions, media } from '../theme'
 
 const styles = {
   bg: {
@@ -22,12 +22,39 @@ const styles = {
     width: '100%',
     margin: '0 auto',
     fontSize: fonts.size.xs,
+    [media.lessThan('small')]: {
+      fontSize: fonts.size.xxs,
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      padding: `${dimensions.padding.horizontal}px`,
+      margin: '0',
+    },
   },
   left: {
     display: 'flex',
     justifyContent: 'space-between',
     width: '75%',
-  }
+    [media.lessThan('small')]: {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      width: '100%',
+    },
+    '& p': {
+      lineHeight: 1.5,
+    },
+  },
+  right: {
+    [media.lessThan('small')]: {
+      marginTop: 30,
+    },
+  },
+  fb: {
+    width: 45,
+    [media.lessThan('small')]: {
+      width: 30,
+    },
+  },
 }
 
 const Footer = ({ classes }) => (
@@ -40,7 +67,7 @@ const Footer = ({ classes }) => (
       </div>
       <div className={classes.right}>
         <a href="https://www.facebook.com/heroeslivehere/" target="_blank" rel="noopener noreferrer">
-          <img src={fbIcon} width={45} />
+          <img src={fbIcon} className={classes.fb} />
         </a>
       </div>
     </div>
