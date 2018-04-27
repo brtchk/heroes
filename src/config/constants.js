@@ -30,7 +30,7 @@ export const MEMBERS = [
   },
   {
     name: 'Ольга Папкова',
-    desc: 'Руководитель образовательных программ',
+    desc: 'Руководитель развивающих программ',
     image: require('../static/member-4.jpg'),
   },
   {

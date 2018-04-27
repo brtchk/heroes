@@ -416,7 +416,7 @@ const IndexPage = ({ classes }) => (
           <Member
             image={member4}
             name="Ольга Папкова"
-            desc="Руководитель образовательных программ"
+            desc="Руководитель развивающих программ"
           />
           <Member
             image={member5}
