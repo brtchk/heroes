@@ -6,6 +6,8 @@ import injectSheet from 'react-jss'
 import Scroll from '../Scroll'
 import Logo from '../Logo'
 import CallForm from '../CallForm'
+import Phone from '../Phone'
+import Mail from '../Mail'
 
 import { colors, fonts, dimensions } from '../../theme'
 
@@ -55,6 +57,7 @@ const styles = {
     textAlign: 'right',
     marginRight: 10,
     lineHeight: 1.3,
+    width: 160,
   },
   button: {
     display: 'flex',
@@ -127,8 +130,8 @@ class Header extends Component {
             </div>
             <div className={classes.rightBlock}>
               <div className={classes.info}>
-                <p>+7 499 450 56 06</p>
-                <p>hello@heroescamp.ru</p>
+                <Phone />
+                <Mail />
               </div>
               <button
                 className={classes.button}

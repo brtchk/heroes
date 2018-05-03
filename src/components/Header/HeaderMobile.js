@@ -9,6 +9,8 @@ import Scrollspy from 'react-scrollspy'
 
 import Scroll from '../Scroll'
 import CallForm from '../CallForm'
+import Phone from '../Phone'
+import Mail from '../Mail'
 import fbIcon from '../../static/fb.png'
 import { colors, fonts, dimensions } from '../../theme'
 
@@ -179,11 +181,11 @@ class HeaderMobile extends Component {
               ))}
             </Scrollspy>
             <div className={`${classes.info} ${classes.infoText}`}>
-              <p>
-                hello@heroescamp.ru
+              <div>
+                <Mail />
                 <br />
                 Москва, Конный переулок, 12
-              </p>
+              </div>
               <a
                 href="https://www.facebook.com/heroeslivehere/"
                 target="_blank"
@@ -194,7 +196,7 @@ class HeaderMobile extends Component {
               </a>
             </div>
             <div className={classes.bottomBlock}>
-              <p className={classes.infoText}>+7 499 450 56 06</p>
+              <Phone className={classes.infoText} />
               <button
                 className={classes.button}
                 onClick={this.handleOpenForm}

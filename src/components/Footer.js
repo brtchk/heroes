@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
+
+import Phone from './Phone'
+import Mail from './Mail'
 
 import fbIcon from '../static/fb.png'
 
@@ -34,6 +37,7 @@ const styles = {
   left: {
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'baseline',
     width: '75%',
     [media.lessThan('large')]: {
       flexDirection: 'column',
@@ -57,21 +61,28 @@ const styles = {
   },
 }
 
-const Footer = ({ classes }) => (
-  <div className={classes.bg}>
-    <div className={classes.container}>
-      <div className={classes.left}>
-        <p>+7 499 450 56 06</p>
-        <p>hello@heroescamp.ru</p>
-        <p>Москва, Конный переулок, 12</p>
+
+class Footer extends Component {
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <div className={classes.bg}>
+        <div className={classes.container}>
+          <div className={classes.left}>
+            <Phone />
+            <Mail />
+            <p>Москва, Конный переулок, 12</p>
+          </div>
+          <div className={classes.right}>
+            <a href="https://www.facebook.com/heroeslivehere/" target="_blank" rel="noopener noreferrer">
+              <img src={fbIcon} className={classes.fb} />
+            </a>
+          </div>
+        </div>
       </div>
-      <div className={classes.right}>
-        <a href="https://www.facebook.com/heroeslivehere/" target="_blank" rel="noopener noreferrer">
-          <img src={fbIcon} className={classes.fb} />
-        </a>
-      </div>
-    </div>
-  </div>
-)
+    )
+  }
+}
 
 export default injectSheet(styles)(Footer)

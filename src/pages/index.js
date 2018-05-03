@@ -11,6 +11,7 @@ import Question from '../components/Question'
 import Logo from '../components/Logo'
 import Map from '../components/Map'
 import ImageGallery from '../components/ImageGallery'
+import Phone from '../components/Phone'
 
 import heroesWhite from '../static/heroes-white.svg'
 import bgImage from '../static/heroes-bg.jpg'
@@ -388,9 +389,9 @@ const IndexPage = ({ classes }) => (
             age="10–17 лет"
           />
         </div>
-        <p className={classes.cardsSubtl}>
-          Не знаете, какую смену выбрать? Позвоните +7  499  450  56  06 — мы проконсультируем.
-        </p>
+        <div className={classes.cardsSubtl}>
+          Не знаете, какую смену выбрать? Позвоните <Phone /> — мы проконсультируем.
+        </div>
       </div>
       <div className={classes.teamBlock}>
         <p className={classes.title} id="team">Наша команда</p>
@@ -529,7 +530,7 @@ const IndexPage = ({ classes }) => (
           <div className={classes.moreQuestions}>
             <div className={classes.moreQuestionsContent}>
               <p className={classes.moreSubtl}>Остались вопросы?</p>
-              <p className={classes.moreSubtl}>Звоните +7 499 450 56 06</p>
+              <div className={classes.moreSubtl}>Звоните <Phone /></div>
             </div>
           </div>
         </div>
