@@ -19,7 +19,7 @@ const styles = {
   container: {
     minHeight: 125,
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'baseline',
     justifyContent: 'space-between',
     maxWidth: dimensions.maxWidth,
     width: '100%',
@@ -34,11 +34,17 @@ const styles = {
       margin: '0',
     },
   },
+  smallText: {
+    display: 'block',
+    fontSize: fonts.size.xxxs,
+    marginRight: 10,
+  },
   left: {
+    margin: 'auto 0',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'baseline',
-    width: '75%',
+    width: '70%',
     [media.lessThan('large')]: {
       flexDirection: 'column',
       alignItems: 'flex-start',
@@ -49,13 +55,21 @@ const styles = {
     },
   },
   right: {
+    margin: 'auto 0',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     [media.lessThan('large')]: {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
       marginTop: 30,
+      lineHeight: 1.3,
     },
   },
   fb: {
     width: 45,
     [media.lessThan('large')]: {
+      marginTop: 20,
       width: 30,
     },
   },
@@ -75,6 +89,17 @@ class Footer extends Component {
             <p>Москва, Конный переулок, 12</p>
           </div>
           <div className={classes.right}>
+            <Link
+              to="terms-of-payment"
+              className={classes.smallText}
+            >
+              Условия оплаты
+            </Link>
+            <Link
+              to="requisites"
+              className={classes.smallText}>
+                Реквизиты
+            </Link>
             <a href="https://www.facebook.com/heroeslivehere/" target="_blank" rel="noopener noreferrer">
               <img src={fbIcon} className={classes.fb} />
             </a>
