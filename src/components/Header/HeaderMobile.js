@@ -226,12 +226,18 @@ class HeaderMobile extends Component {
             </div>
             <div className={classes.bottomBlock}>
               <Phone className={classes.infoText} />
-              <button
+              {/* <button
                 className={classes.button}
                 onClick={this.handleOpenForm}
               >
                 Заказать звонок
-              </button>
+              </button> */}
+              <a
+                href="https://forms.amocrm.ru/trlxtx"
+                className={classes.button}
+              >
+                Заказать звонок
+              </a>
             </div>
           </div>
         }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import ApplyView from '../views/ApplyView'
 import { SMENAS } from '../config/constants'

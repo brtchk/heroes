@@ -392,12 +392,18 @@ const SmenaView = ({
           </div>
           <p className={classes.applySubtl}>Стоимость</p>
           <p className={classes.applyTitle}>{`${smena.price} рублей`}</p>
-          <Link
+          {/* <Link
             to={smena.applyRoute}
             className={classes.button}
           >
             Отправить заявку
-          </Link>
+          </Link> */}
+          <a
+            href={smena.amoForm}
+            className={classes.button}
+          >
+            Отправить заявку
+          </a>
         </div>
       </div>
 
@@ -409,7 +415,7 @@ const SmenaView = ({
           <p className={classes.mobileApplySmallText}>
             {`${smena.price} рублей`}
           </p>
-          <Link
+          {/* <Link
             to={smena.applyRoute}
             className={classes.button}
             style={{
@@ -418,7 +424,17 @@ const SmenaView = ({
             }}
           >
             Отправить заявку
-          </Link>
+          </Link> */}
+          <a
+            href={smena.amoForm}
+            className={classes.button}
+            style={{
+              fontSize: fonts.size.xxs,
+              marginTop: 0,
+            }}
+          >
+            Отправить заявку
+          </a>
         </div>
       </div>
     </div>

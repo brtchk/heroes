@@ -157,12 +157,18 @@ class Header extends Component {
                 <Phone />
                 <Mail />
               </div>
-              <button
+              {/* <button
                 className={classes.button}
                 onClick={this.handleClick}
               >
                 Заказать звонок
-              </button>
+              </button> */}
+              <a
+                href="https://forms.amocrm.ru/trlxtx"
+                className={classes.button}
+              >
+                Заказать звонок
+              </a>
             </div>
           </div>
         </div>
