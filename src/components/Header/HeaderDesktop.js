@@ -12,6 +12,9 @@ import Mail from '../Mail'
 import { colors, fonts, dimensions } from '../../theme'
 
 const styles = {
+  root: {
+    position: 'relative',
+  },
   bg: {
     backgroundColor: colors.orange,
     color: colors.black,
@@ -77,6 +80,41 @@ const styles = {
   }
 }
 
+const MenuItems = ({ menuItems, classes }) => (
+  <div>
+    {menuItems.map(item => (
+      <Link
+        key={item.title}
+        className={classes.link}
+        style={{ fontSize: fonts.size.s }}
+        to={item.route}
+      >
+        {item.title}
+      </Link>
+    ))}
+  </div>
+)
+
+const MenuItemsScroll = ({ menuItems, classes }) => (
+  <Scrollspy
+    items={ ['smena', 'team', 'place', 'faq'] }
+    currentClassName="is-active"
+    offset={-300}
+  >
+    {menuItems.map(item => (
+      <Scroll type="id" element={item.route} key={item.title}>
+        <a
+          href="#"
+          className={classes.link}
+          style={{ fontSize: fonts.size.s }}
+        >
+          {item.title}
+        </a>
+      </Scroll>
+    ))}
+  </Scrollspy>
+)
+
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -91,12 +129,17 @@ class Header extends Component {
   }
 
   render() {
-    const { classes, menuItems } = this.props
+    const { classes, menuItems, fixed } = this.props
     const { open } = this.state
+
+    const MenuItemsComponent = fixed ? MenuItemsScroll : MenuItems
 
     return (
       <div className={classes.root}>
-        <div className={classes.bg}>
+        <div
+          className={classes.bg}
+          style={{ position: fixed ? 'fixed' : 'static' }}
+        >
           <div className={classes.container}>
             <div className={classes.leftBlock}>
               <Link
@@ -106,23 +149,7 @@ class Header extends Component {
                 <Logo color={colors.black} style={{ height: 40 }} />
               </Link>
               <div className={classes.menuItems}>
-                <Scrollspy
-                  items={['smena', 'team', 'place', 'faq']}
-                  currentClassName="is-active"
-                  offset={-300}
-                >
-                  {menuItems.map(item => (
-                    <Link
-                      key={item.title}
-                      className={classes.link}
-                      style={{ fontSize: fonts.size.s }}
-                      to={item.route}
-                    >
-                      {item.title}
-                    </Link>
-
-                  ))}
-                </Scrollspy>
+                <MenuItemsComponent menuItems={menuItems} classes={classes} />
               </div>
             </div>
             <div className={classes.rightBlock}>
@@ -140,19 +167,6 @@ class Header extends Component {
           </div>
         </div>
         {open && <CallForm open={open} style={{ position: 'absolute' }} />}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w, d, u, i, o, s, p) {
-                  if (d.getElementById(i)) { return; } w['MangoObject'] = o;
-                  w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments) }; w[o].u = u; w[o].t = 1 * new Date();
-                  s = d.createElement('script'); s.async = 1; s.id = i; s.src = u;
-                  p = d.getElementsByTagName('script')[0]; p.parentNode.insertBefore(s, p);
-              }(window, document, '//widgets.mango-office.ru/widgets/mango.js', 'mango-js', 'mgo'));
-              mgo({calltracking: {id: 12625, elements: [{"selector":".mgo-number-12625"}]}});
-            `,
-          }}
-        />
       </div>
     )
   }

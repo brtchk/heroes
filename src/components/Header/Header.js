@@ -25,17 +25,40 @@ const menuItems = [
   },
 ]
 
-export const Header = props => (
-  <div>
-    <Media query={media.lessThan('large', { dropPrefix: true })}>
-      {
-        matches =>
-          matches
-          ? <HeaderMobile menuItems={menuItems} {...props} />
-          : <HeaderDesktop menuItems={menuItems} {...props} />
-      }
-    </Media>
-  </div>
-);
+const menuItemsFixed = [
+  {
+    title: 'Смены',
+    route: 'smena',
+  },
+  {
+    title: 'Команда',
+    route: 'team',
+  },
+  {
+    title: 'Место',
+    route: 'place',
+  },
+  {
+    title: 'FAQ',
+    route: 'faq',
+  },
+]
+
+export const Header = props => {
+  const items = props.fixed ? menuItemsFixed : menuItems
+
+  return (
+    <div>
+      <Media query={media.lessThan('large', { dropPrefix: true })}>
+        {
+          matches =>
+            matches
+            ? <HeaderMobile menuItems={items} {...props} />
+            : <HeaderDesktop menuItems={items} {...props} />
+        }
+      </Media>
+    </div>
+  )
+}
 
 export default Header;

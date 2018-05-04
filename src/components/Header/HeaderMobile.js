@@ -2,15 +2,15 @@ import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Menu from 'react-hamburger-menu'
 import injectSheet from 'react-jss'
+import Scrollspy from 'react-scrollspy'
 
 import NavLink from './NavLink';
 import Logo from '../Logo'
-import Scrollspy from 'react-scrollspy'
-
-import Scroll from '../Scroll'
-import CallForm from '../CallForm'
 import Phone from '../Phone'
 import Mail from '../Mail'
+import Scroll from '../Scroll'
+import CallForm from '../CallForm'
+
 import fbIcon from '../../static/fb.png'
 import { colors, fonts, dimensions } from '../../theme'
 
@@ -19,7 +19,6 @@ const styles = {
     height: 80,
     display: 'flex',
     alignItems: 'center',
-    position: 'relative',
     zIndex: 100,
     width: '100%',
     backgroundColor: colors.orange,
@@ -106,6 +105,44 @@ const styles = {
   },
 }
 
+const MenuItems = ({ menuItems, classes }) => (
+  <div>
+    {menuItems.map(item => (
+      <Link
+        key={item.title}
+        className={classes.link}
+        to={item.route}
+      >
+          {item.title}
+      </Link>
+    ))}
+  </div>
+)
+
+const MenuItemsScroll = ({ menuItems, classes, handleClick }) => (
+  <Scrollspy
+    items={ ['smena', 'team', 'place', 'faq'] }
+    currentClassName="is-active"
+    offset={-300}
+  >
+    {menuItems.map(item => (
+      <Scroll
+        key={item.title}
+        type="id"
+        element={item.route}
+        handleClick={handleClick}
+      >
+        <a
+          href="#"
+          className={classes.link}
+        >
+          {item.title}
+        </a>
+      </Scroll>
+    ))}
+  </Scrollspy>
+)
+
 class HeaderMobile extends Component {
   constructor(props) {
     super(props);
@@ -130,14 +167,15 @@ class HeaderMobile extends Component {
   }
 
   render() {
-    const { menuItems, classes } = this.props;
+    const { menuItems, classes, fixed } = this.props;
     const { isMenuOpen, callFormOpen } = this.state;
+    const MenuItemsComponent = fixed ? MenuItemsScroll : MenuItems
 
     return (
       <div>
         <div
           className={classes.container}
-          style={{ position: isMenuOpen ? 'fixed' : 'relative' }}
+          style={{ position: (isMenuOpen || fixed) ? 'fixed' : 'relative' }}
         >
           <div className={classes.contentContainer}>
             <Link
@@ -165,21 +203,15 @@ class HeaderMobile extends Component {
         </div>
         {isMenuOpen &&
           <div className={classes.mobileNavContainer}>
-            <Scrollspy
-              items={ ['smena', 'team', 'place', 'faq'] }
-              currentClassName="is-active"
-              offset={-300}
-            >
-              {menuItems.map(item => (
-                <Link
-                  key={item.title}
-                  className={classes.link}
-                  to={item.route}
-                >
-                    {item.title}
-                </Link>
-              ))}
-            </Scrollspy>
+            <MenuItemsComponent
+              menuItems={menuItems}
+              classes={classes}
+              handleClick={
+                fixed
+                ? () => { this.setState({ isMenuOpen: false }); }
+                : () => null
+              }
+            />
             <div className={`${classes.info} ${classes.infoText}`}>
               <div>
                 <Mail />
@@ -221,19 +253,6 @@ class HeaderMobile extends Component {
             }}
           />
         }
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(w, d, u, i, o, s, p) {
-                  if (d.getElementById(i)) { return; } w['MangoObject'] = o;
-                  w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments) }; w[o].u = u; w[o].t = 1 * new Date();
-                  s = d.createElement('script'); s.async = 1; s.id = i; s.src = u;
-                  p = d.getElementsByTagName('script')[0]; p.parentNode.insertBefore(s, p);
-              }(window, document, '//widgets.mango-office.ru/widgets/mango.js', 'mango-js', 'mgo'));
-              mgo({calltracking: {id: 12625, elements: [{"selector":".mgo-number-12625"}]}});
-            `,
-          }}
-        />
       </div>
     )
   }
