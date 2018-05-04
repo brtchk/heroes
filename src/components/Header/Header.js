@@ -1,5 +1,4 @@
 import React from 'react'
-import Media from 'react-media'
 import injectSheet from 'react-jss'
 
 import HeaderDesktop from './HeaderDesktop'
@@ -67,14 +66,6 @@ export const Header = ({ classes, ...props }) => {
 
   return (
     <div>
-      {/* <Media query={media.lessThan('large', { dropPrefix: true })}>
-        {
-          matches =>
-            matches
-            ? <HeaderMobile menuItems={items} {...props} />
-            : <HeaderDesktop menuItems={items} {...props} />
-        }
-      </Media> */}
       <div className={classes.desktop}>
         <HeaderDesktop menuItems={items} {...props} />
       </div>

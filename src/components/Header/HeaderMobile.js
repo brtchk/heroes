@@ -105,13 +105,14 @@ const styles = {
   },
 }
 
-const MenuItems = ({ menuItems, classes }) => (
+const MenuItems = ({ menuItems, classes, handleClick }) => (
   <div>
     {menuItems.map(item => (
       <Link
         key={item.title}
         className={classes.link}
         to={item.route}
+        handleClick={handleClick}
       >
           {item.title}
       </Link>
@@ -206,11 +207,7 @@ class HeaderMobile extends Component {
             <MenuItemsComponent
               menuItems={menuItems}
               classes={classes}
-              handleClick={
-                fixed
-                ? () => { this.setState({ isMenuOpen: false }); }
-                : () => null
-              }
+              handleClick={() => { this.setState({ isMenuOpen: false }); }}
             />
             <div className={`${classes.info} ${classes.infoText}`}>
               <div>
