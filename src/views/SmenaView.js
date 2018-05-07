@@ -236,7 +236,7 @@ const styles = {
     position: 'fixed',
     zIndex: 99,
     width: '100%',
-    height: 100,
+    height: 110,
     left: 0,
     bottom: 0,
     padding: `10px ${dimensions.padding.horizontal}px`,
@@ -398,6 +398,16 @@ const SmenaView = ({
           </div>
           <p className={classes.applySubtl}>Стоимость</p>
           <p className={classes.applyTitle}>{`${smena.price} рублей`}</p>
+          <p
+            className={classes.applySubtl}
+            style={{
+              color: colors.black,
+              fontSize: fonts.size.xxxs,
+              marginTop: 5,
+            }}
+          >
+            * можно купить в рассрочку
+          </p>
           {/* <Link
             to={smena.applyRoute}
             className={classes.button}
@@ -419,7 +429,7 @@ const SmenaView = ({
         </div>
         <div className={classes.mobileApplyRight}>
           <p className={classes.mobileApplySmallText}>
-            {`${smena.price} рублей`}
+            {`${smena.price} рублей`}<br />(возможна рассрочка)
           </p>
           {/* <Link
             to={smena.applyRoute}
