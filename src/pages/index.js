@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
 import Scrollspy from 'react-scrollspy'
+import { Player, BigPlayButton } from 'video-react'
+import 'video-react/dist/video-react.css'
 
 import Scroll from '../components/Scroll'
 import Thesis from '../components/Thesis'
@@ -12,6 +14,7 @@ import Logo from '../components/Logo'
 import Map from '../components/Map'
 import ImageGallery from '../components/ImageGallery'
 import Phone from '../components/Phone'
+import Video from '../components/Video'
 
 import heroesWhite from '../static/heroes-white.svg'
 import bgImage from '../static/heroes-bg.jpg'
@@ -35,6 +38,7 @@ import image1 from '../static/smena-1-1.jpg'
 import image2 from '../static/smena-1-2.jpg'
 import image3 from '../static/smena-1-3.jpg'
 import image4 from '../static/smena-1-4.jpg'
+import mainVideo from '../static/7.mp4'
 
 import { colors, fonts, dimensions, media } from '../theme'
 
@@ -334,7 +338,16 @@ const IndexPage = ({ classes }) => (
           text="развитие стойкости духа, стратегического мышления,  лидерских качеств, умения взаимодействовать в команде, и прежде всего, осознанное отношение к себе и окружающим."
         />
       </div>
-      <p className={classes.title} id="smena">Смены</p>
+      <Video
+        source={mainVideo}
+        title="Смотреть рассказ про лагерь"
+      />
+      <p
+        className={classes.title}
+        style={{ marginTop: 0 }}
+        id="smena">
+          Смены
+      </p>
       <p className={classes.subtl}>
         В программах сочетаются элементы физического и психо-эмоционального развития — возможность обогатиться бесценным опытом, незабываемыми эмоциями и погрузиться в захватывающие приключения. Вместе с командой дети преодолевают препятствия, формируют доверие к окружающим и уверенность в себе, здоровые привычки и навыки коммуникации.
       </p>

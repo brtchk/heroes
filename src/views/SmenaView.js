@@ -14,6 +14,7 @@ import TimeIcon from '../components/Icons/Time'
 import Team from '../components/Team'
 import TimeTable from '../components/TimeTable/TimeTable'
 import SmenaInfo from '../components/SmenaInfo'
+import Video from '../components/Video'
 
 import mainImage from '../static/smena-1-inside.jpg'
 import image1 from '../static/smena-1-1.jpg'
@@ -290,6 +291,11 @@ const SmenaView = ({
         <div className={classes.highlightBlock}>
           {smena.intro.highlight}
         </div>
+        <Video
+          source={smena.video}
+          textStyle={{ top: '70%', width: '100%' }}
+          title="Смотреть рассказ  про смену"
+        />
         <p className={`${classes.text} ${classes.textBlock}`}>
           {smena.intro.text2}
         </p>

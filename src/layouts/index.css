@@ -68,6 +68,22 @@ button {
   color: #939393;
 }
 
+/* VIDEO PLAYER */
+
+.video-react-big-play-button {
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.video-react-big-play-button:hover {
+  background-color: transparent;
+}
+
+.video-react-big-play-button-center {
+  top: 46% !important;
+  font-size: 15vw !important;
+}
+
 /* FADE */
 
 .fade {

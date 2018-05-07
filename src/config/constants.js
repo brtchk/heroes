@@ -5,6 +5,13 @@ import mainImageSmena4 from '../static/smena-4-inside.jpg'
 import mainImageSmena5 from '../static/smena-5-inside.jpg'
 import mainImageSmena6 from '../static/smena-6-inside.jpg'
 
+import videoSmena1 from '../static/1.mp4'
+import videoSmena2 from '../static/2.mp4'
+import videoSmena3 from '../static/3.mp4'
+import videoSmena4 from '../static/4.mp4'
+import videoSmena5 from '../static/5.mp4'
+import videoSmena6 from '../static/6.mp4'
+
 import image1 from '../static/smena-1-1.jpg'
 import image2 from '../static/smena-1-2.jpg'
 import image3 from '../static/smena-1-3.jpg'
@@ -85,6 +92,7 @@ export const SMENAS = [
     time: '14 дней',
     price: '39 900',
     image: mainImageSmena1,
+    video: videoSmena1,
     applyRoute: 'smena-1-apply',
     amoForm: 'https://forms.amocrm.ru/trrwcc',
     intro: {
@@ -221,6 +229,7 @@ export const SMENAS = [
     time: '14 дней',
     price: '41 500',
     image: mainImageSmena2,
+    video: videoSmena2,
     applyRoute: 'smena-2-apply',
     amoForm: 'https://forms.amocrm.ru/trrwcx',
     intro: {
@@ -357,6 +366,7 @@ export const SMENAS = [
     time: '14 дней',
     price: '44 900',
     image: mainImageSmena3,
+    video: videoSmena3,
     applyRoute: 'smena-3-apply',
     amoForm: 'https://forms.amocrm.ru/trrwzw',
     intro: {
@@ -507,6 +517,7 @@ export const SMENAS = [
     time: '14 дней',
     price: '44 900',
     image: mainImageSmena4,
+    video: videoSmena4,
     applyRoute: 'smena-4-apply',
     amoForm: 'https://forms.amocrm.ru/trrwzm',
     intro: {
@@ -645,6 +656,7 @@ export const SMENAS = [
     time: '14 дней',
     price: '41 500',
     image: mainImageSmena5,
+    video: videoSmena5,
     applyRoute: 'smena-5-apply',
     amoForm: 'https://forms.amocrm.ru/trrwmr',
     intro: {
@@ -783,6 +795,7 @@ export const SMENAS = [
     time: '14 дней',
     price: '39 500',
     image: mainImageSmena6,
+    video: videoSmena6,
     applyRoute: 'smena-6-apply',
     amoForm: 'https://forms.amocrm.ru/trrwdw',
     intro: {
