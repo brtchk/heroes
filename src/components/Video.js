@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import injectSheet from 'react-jss'
-import { Player, BigPlayButton } from 'video-react'
+import { Player, BigPlayButton, LoadingSpinner } from 'video-react'
 import 'video-react/dist/video-react.css'
 
 import { fonts, media } from '../theme'
@@ -49,6 +49,7 @@ class Video extends Component {
       <div style={{ position: 'relative' }}>
         <Player src={source} ref={ref => { this.player = ref; }}>
           <BigPlayButton position="center" onClick={() => console.log('text')} />
+          <LoadingSpinner />
         </Player>
         {showTitle && <p className={classes.videoText} style={textStyle}>{title}</p>}
       </div>
