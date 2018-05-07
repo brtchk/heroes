@@ -39,6 +39,7 @@ import image2 from '../static/smena-1-2.jpg'
 import image3 from '../static/smena-1-3.jpg'
 import image4 from '../static/smena-1-4.jpg'
 import mainVideo from '../static/7.mp4'
+import percentImage from '../static/percent.png'
 
 import { colors, fonts, dimensions, media } from '../theme'
 
@@ -290,6 +291,13 @@ const styles = {
       fontSize: fonts.size.xs,
     },
   },
+  percentImage: {
+    width: 200,
+    height: '100%',
+    [media.lessThan('medium')]: {
+      display: 'none',
+    },
+  }
 }
 
 const IndexPage = ({ classes }) => (
@@ -348,9 +356,16 @@ const IndexPage = ({ classes }) => (
         id="smena">
           Смены
       </p>
-      <p className={classes.subtl}>
-        В программах сочетаются элементы физического и психо-эмоционального развития — возможность обогатиться бесценным опытом, незабываемыми эмоциями и погрузиться в захватывающие приключения. Вместе с командой дети преодолевают препятствия, формируют доверие к окружающим и уверенность в себе, здоровые привычки и навыки коммуникации.
-      </p>
+      <div style={{
+        display: 'flex',
+        width: '100%',
+        justifyContent: 'space-between',
+      }}>
+        <p className={classes.subtl}>
+          В программах сочетаются элементы физического и психо-эмоционального развития — возможность обогатиться бесценным опытом, незабываемыми эмоциями и погрузиться в захватывающие приключения. Вместе с командой дети преодолевают препятствия, формируют доверие к окружающим и уверенность в себе, здоровые привычки и навыки коммуникации.
+        </p>
+        <img src={percentImage} className={classes.percentImage} />
+      </div>
       <div className={classes.cardsBlock}>
         <div className={classes.cards}>
           <Card
