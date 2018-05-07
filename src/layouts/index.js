@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer'
+import HaveQuestions from '../components/HaveQuestions'
 import fbGraph from '../static/fb-graph.png'
 import dimensions from '../theme'
 
@@ -28,6 +29,7 @@ const Layout = ({ children, data, location }) => (
     <div>
       {children()}
     </div>
+    <HaveQuestions />
     <Footer />
   </div>
 )

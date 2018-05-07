@@ -269,28 +269,6 @@ const styles = {
   qaColumn: {
     width: '49%',
   },
-  moreQuestions: {
-    minHeight: 186,
-    display: 'flex',
-    flexDirection: 'column',
-    border: `4px solid ${colors.orange}`,
-    padding: 20,
-  },
-  moreQuestionsContent: {
-    margin: 'auto',
-    textAlign: 'center',
-    color: colors.orange,
-    lineHeight: 1.3,
-  },
-  moreTitle: {
-    fontSize: fonts.size.l,
-  },
-  moreSubtl: {
-    fontSize: fonts.size.s,
-    [media.lessThan('small')]: {
-      fontSize: fonts.size.xs,
-    },
-  },
   percentImage: {
     width: 200,
     height: '100%',
@@ -555,12 +533,6 @@ const IndexPage = ({ classes }) => (
             question="Что такое спортивно-тактические игры?"
             answer="Спортивно-тактические игры представляют собой сочетание различных блоков заданий, таких как физическая, тактико-специальная, горно-высотная, огневая подготовка, основы выживания, и правила безопасного поведения в экстренных городских ситуациях. Такой комплекс позволяет развить внимание, скорость реакции, стрессоустойчивость, быструю адаптацию организма к изменению обстановки, быстро интуитивно мыслить в стрессовой обстановке, анализировать ситуацию, умение работать в команде, развивает стратегическое мышление и лидерские качества, уверенность в себе, решительность, смелость, самостоятельность, ответственность за принятие решений."
           />
-          <div className={classes.moreQuestions}>
-            <div className={classes.moreQuestionsContent}>
-              <p className={classes.moreSubtl}>Остались вопросы?</p>
-              <div className={classes.moreSubtl}>Звоните <Phone /></div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
