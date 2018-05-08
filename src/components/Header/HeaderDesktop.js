@@ -17,12 +17,13 @@ const styles = {
   },
   bg: {
     backgroundColor: colors.orange,
-    color: colors.black,
+    color: colors.white,
     top: 0,
     width: '100%',
     zIndex: 100,
   },
   container: {
+    position: 'relative',
     height: 80,
     display: 'flex',
     alignItems: 'center',
@@ -33,7 +34,12 @@ const styles = {
   },
   leftBlock: {
     display: 'flex',
-    alignItems: 'baseline',
+  },
+  menuItems: {
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
   },
   rightBlock: {
     display: 'flex',
@@ -43,12 +49,13 @@ const styles = {
     display: 'inline-block',
     textDecoration: 'none',
     fontSize: 50,
-    marginRight: 25,
+    marginRight: 15,
   },
   link: {
     display: 'inline-block',
     textDecoration: 'none',
     margin: '0 12px',
+    fontSize: fonts.size.xxs,
     '&:hover': {
       color: colors.lightBlue,
     },
@@ -66,7 +73,7 @@ const styles = {
     width: 186,
     height: 48,
     fontSize: fonts.size.xs,
-    border: `3px solid ${colors.black}`,
+    border: `3px solid ${colors.white}`,
     backgroundColor: 'transparent',
     cursor: 'pointer',
     '&:hover': {
@@ -86,7 +93,6 @@ const MenuItems = ({ menuItems, classes }) => (
       <Link
         key={item.title}
         className={classes.link}
-        style={{ fontSize: fonts.size.s }}
         to={item.route}
       >
         {item.title}
@@ -106,7 +112,6 @@ const MenuItemsScroll = ({ menuItems, classes }) => (
         <a
           href="#"
           className={classes.link}
-          style={{ fontSize: fonts.size.s }}
         >
           {item.title}
         </a>
@@ -146,16 +151,23 @@ class Header extends Component {
                 to="/"
                 className={classes.logo}
               >
-                <Logo color={colors.black} style={{ height: 40 }} />
+                <Logo color={colors.white} style={{ height: 40 }} />
               </Link>
-              <div className={classes.menuItems}>
-                <MenuItemsComponent menuItems={menuItems} classes={classes} />
-              </div>
+              <p
+                style={{
+                  fontSize: fonts.size.xxs + 2,
+                  lineHeight: 1.2,
+                }}
+              >
+                ДЕТСКИЙ<br />ЛАГЕРЬ
+              </p>
+            </div>
+            <div className={classes.menuItems}>
+              <MenuItemsComponent menuItems={menuItems} classes={classes} />
             </div>
             <div className={classes.rightBlock}>
               <div className={classes.info}>
                 <Phone />
-                <Mail />
               </div>
               {/* <button
                 className={classes.button}

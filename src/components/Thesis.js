@@ -6,11 +6,13 @@ import { colors, fonts, media } from '../theme'
 
 const styles = {
   container: {
+    textAlign: 'center',
     maxWidth: 305,
     [media.lessThan('medium')]: {
       marginBottom: 50,
     },
     [media.lessThan('small')]: {
+      textAlign: 'left',
       maxWidth: '100%',
     },
   },

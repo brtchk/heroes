@@ -328,7 +328,7 @@ const SmenaView = ({
         <TimeTable timeTable={smena.timeTable} />
         <p className={classes.title}>{smena.team.title}</p>
         <div className={classes.teamContainer}>
-          <Team members={smena.team.members} />
+          <Team members={smena.team.members} memberStyle={{ textAlign: 'left' }} />
         </div>
         <p className={classes.title}>{smena.place.title}</p>
         <p className={`${classes.text} ${classes.textBlock}`}>

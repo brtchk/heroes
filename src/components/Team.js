@@ -19,14 +19,15 @@ const styles = {
   },
 }
 
-const Team = ({ classes, members }) => (
+const Team = ({ classes, members, memberStyle }) => (
   <div className={classes.container}>
     {
       members.map(member => (
         <Member
           key={member.name}
           style={{
-            maxWidth: 190
+            maxWidth: 190,
+            ...memberStyle,
           }}
           image={member.image}
           name={member.name}

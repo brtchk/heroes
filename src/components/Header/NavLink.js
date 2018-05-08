@@ -12,7 +12,7 @@ const styles = {
   },
   navLink: {
     color: 'white',
-    fontSize: fonts.size.s,
+    fontSize: fonts.size.xxs,
   },
 }
 

@@ -10,7 +10,6 @@ const styles = {
     textAlign: 'center',
     position: 'absolute',
     fontSize: fonts.size.m,
-    zIndex: 200,
     color: 'white',
     top: '65%',
     left: '50%',
@@ -48,7 +47,7 @@ class Video extends Component {
     return (
       <div style={{ position: 'relative' }}>
         <Player src={source} ref={ref => { this.player = ref; }}>
-          <BigPlayButton position="center" onClick={() => console.log('text')} />
+          <BigPlayButton position="center" />
           <LoadingSpinner />
         </Player>
         {showTitle && <p className={classes.videoText} style={textStyle}>{title}</p>}

@@ -105,10 +105,9 @@ const styles = {
     marginTop: 70,
     fontSize: fonts.size.xs,
     backgroundColor: colors.orange,
-    color: colors.black,
+    color: colors.white,
     '&:hover': {
       backgroundColor: colors.lightBlue,
-      color: colors.white,
       borderColor: 'transparent',
     },
     [media.lessThan('small')]: {
@@ -157,19 +156,23 @@ const styles = {
   },
   title: {
     fontSize: fonts.size.xxl,
+    textAlign: 'center',
     paddingTop: 100,
     marginTop: -100,
     [media.lessThan('small')]: {
+      textAlign: 'left',
       fontSize: fonts.size.xl + 5,
     },
   },
   subtl: {
+    textAlign: 'center',
     fontSize: fonts.size.xs,
     maxWidth: 650,
     lineHeight: 1.3,
-    marginTop: 20,
+    margin: '20px auto 0',
     [media.lessThan('small')]: {
-      fontSize: fonts.size.xxs,
+      margin: '20px 0 0',
+      textAlign: 'left',
     },
   },
   block: {
@@ -235,7 +238,7 @@ const styles = {
     },
   },
   mapUnderlay: {
-    width: 261,
+    width: 327,
     margin: 'auto',
     [media.lessThan('medium')]: {
       width: '100%',
@@ -252,6 +255,7 @@ const styles = {
   },
   members: {
     display: 'flex',
+    margin: '0 auto',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
     marginTop: 50,
@@ -259,6 +263,11 @@ const styles = {
     [media.lessThan('medium')]: {
       justifyContent: 'space-around',
     },
+    [media.lessThan('small')]: {
+      justifyContent: 'space-between',
+      margin: '40px 0 0',
+    },
+    margin: '0 auto',
   },
   faqBlock: {
     marginTop: 100,
@@ -270,8 +279,10 @@ const styles = {
     width: '49%',
   },
   percentImage: {
+    position: 'absolute',
+    right: 0,
     width: 200,
-    height: '100%',
+    // height: '100%',
     [media.lessThan('medium')]: {
       display: 'none',
     },
@@ -311,7 +322,7 @@ const IndexPage = ({ classes }) => (
         <Thesis
           image={cupImage}
           hightlight="Призвание нашего лагеря — "
-          text="показать каждому участнику, что героем стать возможно.Наша цель — сформировать необходимые качества характера уверенного в себе и успешного человека."
+          text="показать каждому участнику, что героем стать возможно. Наша цель — сформировать необходимые качества характера уверенного в себе и успешного человека."
         />
         <Thesis
           image={brilliantImage}
@@ -321,7 +332,7 @@ const IndexPage = ({ classes }) => (
         <Thesis
           image={mountainImage}
           hightlight="Результат каждой смены — "
-          text="развитие стойкости духа, стратегического мышления,  лидерских качеств, умения взаимодействовать в команде, и прежде всего, осознанное отношение к себе и окружающим."
+          text="развитие стойкости духа, стратегического мышления, лидерских качеств, умения взаимодействовать в команде, и прежде всего, осознанное отношение к себе и окружающим."
         />
       </div>
       <Video
@@ -336,8 +347,9 @@ const IndexPage = ({ classes }) => (
       </p>
       <div style={{
         display: 'flex',
+        position: 'relative',
         width: '100%',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
       }}>
         <p className={classes.subtl}>
           В программах сочетаются элементы физического и психо-эмоционального развития — возможность обогатиться бесценным опытом, незабываемыми эмоциями и погрузиться в захватывающие приключения. Вместе с командой дети преодолевают препятствия, формируют доверие к окружающим и уверенность в себе, здоровые привычки и навыки коммуникации.
@@ -438,10 +450,12 @@ const IndexPage = ({ classes }) => (
         </div>
       </div>
       <div className={classes.block}>
-        <p className={classes.title} id="place">Место проведения</p>
+        <p className={classes.title} id="place">
+          Место проведения
+        </p>
         <div className={classes.placeContent}>
           <div className={classes.placeLeft}>
-            <p className={classes.subtl}>
+            <p className={classes.subtl} style={{ textAlign: 'left' }}>
               Боровое — одно из самых красивых и экологически чистых мест Подмосковья, расположенное в 60 км к северо-востоку от Москвы.
               <br style={{ lineHeight: 2.5 }} />
               База отдыха находится на берегу реки Шерна, вдали от городского шума и суеты. Для юных героев здесь созданы все условия для фантастических приключений в дали от гаджетов. Наслаждение активным отдыхом на свежем воздухе происходит среди густого хвойного леса и живописных песчанных пляжей, и ручьев с кристально чистой родниковой водой.

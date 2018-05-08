@@ -8,8 +8,10 @@ const styles = {
   container: {
     maxWidth: 242,
     marginBottom: 40,
+    textAlign: 'center',
     [media.lessThan('small')]: {
       maxWidth: '45% !important',
+      textAlign: 'left',
     },
   },
   image: {
