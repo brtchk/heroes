@@ -62,7 +62,7 @@ class HaveQuestions extends Component {
     return (
       <div className={classes.bg}>
         <div className={classes.container}>
-          Остались вопросы? Звоните +7  499  450  56  06  или задайте их тут:
+          Остались вопросы? Звоните <Phone />  или задайте их тут:
           <a
             href="https://forms.amocrm.ru/trvcvv"
             className={classes.button}
