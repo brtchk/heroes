@@ -36,5 +36,11 @@ module.exports = {
         webvisor:true
       },
     },
+    {
+      resolve: 'gatsby-plugin-facebook-pixel',
+      options: {
+        pixelId: '2060131047573963',
+      },
+    },
   ],
 }
