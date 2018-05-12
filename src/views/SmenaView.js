@@ -420,6 +420,12 @@ const SmenaView = ({
           >
             Отправить заявку
           </a>
+          {/* <Link
+            to={smena.payRoute}
+            className={classes.button}
+          >
+            Оплатить
+          </Link> */}
         </div>
       </div>
 

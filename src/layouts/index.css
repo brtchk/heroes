@@ -88,6 +88,13 @@ button {
   font-size: 15vw !important;
 }
 
+/* TINKOFF FORM */
+
+.tinkoffPayRow {
+  display: block;
+  width: 100%;
+}
+
 /* FADE */
 
 .fade {

@@ -66,6 +66,7 @@ module.exports = class HTML extends React.Component {
               `,
             }}
           />
+          <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js" />
         </body>
       </html>
     )
