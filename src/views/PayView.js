@@ -81,7 +81,8 @@ class Pay extends Component {
   }
 
   handleFormSubmit = event => {
-    window.pay(window);
+    event.preventDefault();
+    window.pay(this.form);
     return false;
   }
 
@@ -113,6 +114,7 @@ class Pay extends Component {
             name="TinkoffPayForm"
             onSubmit={this.handleFormSubmit}
             className={classes.form}
+            ref={(_ref) => { this.form = _ref; }}
           >
             <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="4722" />
             <input className="tinkoffPayRow" type="hidden" name="frame" value="true" />
