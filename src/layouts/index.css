@@ -35,7 +35,7 @@ a {
 
 /* FORMS */
 
-input, textarea {
+input, textarea, .input {
   font-family: Next, sans-serif;
   color: rgb(107, 60, 0);
   height: 60px;
@@ -45,6 +45,12 @@ input, textarea {
   width: 100%;
   margin-bottom: 20px;
   border: 0;
+  border-radius: 0;
+}
+
+.Select-value-label {
+  display: inline-block !important;
+  margin-top: 14px !important;
 }
 
 button {

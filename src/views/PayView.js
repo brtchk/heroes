@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
 import cx from 'classnames'
+import randomId from 'random-id'
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 import Button from '../components/Button'
 import SmenaInfo from '../components/SmenaInfo'
@@ -75,20 +78,34 @@ class Pay extends Component {
   constructor(props) {
     super(props)
 
+    const { smena } = props
+    const price = parseInt(smena.price) * 1000
+
     this.state = {
       buttonTitle: 'Отправить',
+      selectedValue: 1,
+      price,
+      sum: price,
+      description: smena.title,
     }
   }
 
-  handleFormSubmit = event => {
+  handleSelect = (selectedValue) => {
+    this.setState({
+      selectedValue,
+      sum: Math.ceil(this.state.price * selectedValue.value),
+    });
+  }
+
+  handleFormSubmit = (event) => {
     event.preventDefault();
     window.pay(this.form);
     return false;
   }
 
-
   render() {
     const { classes, smena } = this.props
+    const { selectedValue, description, sum } = this.state
 
     return (
       <div className={`${classes.container} fade`}>
@@ -110,21 +127,47 @@ class Pay extends Component {
           <p className={classes.subtl}>
             Заполните короткую анкету. Мы перезвоним вам в течение дня и расскажем про дальнейшие шаги.
           </p>
+          <Select
+            clearable={false}
+            searchable={false}
+            style={{
+              marginTop: 30,
+              color: colors.brown,
+              fontFamily: 'Next, sans-serif',
+              color: 'rgb(107, 60, 0)',
+              height: '60px !importantr',
+              outline: 'none',
+              padding: 15,
+              fontSize: 18,
+              width: '100%',
+              marginBottom: 20,
+              border: 0,
+              borderRadius: 0,
+            }}
+            menuContainerStyle={{ paddingTop: 10 }}
+            onChange={this.handleSelect}
+            value={selectedValue}
+            options={[
+              { value: 1, label: 'Полная стоимость' },
+              { value: 0.5, label: '50%' },
+              { value: 0.25, label: '25%' },
+            ]}
+          />
           <form
             name="TinkoffPayForm"
             onSubmit={this.handleFormSubmit}
             className={classes.form}
             ref={(_ref) => { this.form = _ref; }}
           >
-            <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="4722" />
+            <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="1524497548021DEMO" />
             <input className="tinkoffPayRow" type="hidden" name="frame" value="true" />
             <input className="tinkoffPayRow" type="hidden" name="language" value="ru" />
-            <input className="tinkoffPayRow" type="text" placeholder="Сумма заказа" name="amount" required />
-            <input className="tinkoffPayRow" type="text" placeholder="Номер заказа" name="order" />
-            <input className="tinkoffPayRow" type="text" placeholder="Описание заказа" name="description" />
-            <input className="tinkoffPayRow" type="text" placeholder="ФИО плательщика" name="name" />
-            <input className="tinkoffPayRow" type="text" placeholder="E-mail" name="email" />
-            <input className="tinkoffPayRow" type="text" placeholder="Контактный телефон" name="phone" />
+            <input className="tinkoffPayRow" type="text" placeholder="Сумма заказа" name="amount" required disabled value={1} />
+            <input className="tinkoffPayRow" type="hidden" placeholder="Номер заказа" name="order" disabled value={randomId(20, '0')} />
+            <input className="tinkoffPayRow" type="hidden" placeholder="Описание заказа" name="description" disabled value={description} />
+            <input className="tinkoffPayRow" type="text" placeholder="ФИО плательщика" name="name" required />
+            <input className="tinkoffPayRow" type="text" placeholder="E-mail" name="email" required />
+            <input className="tinkoffPayRow" type="text" placeholder="Контактный телефон" name="phone" required />
             <input className={cx('tinkoffPayRow', classes.button)} type="submit" value="Оплатить" />
           </form>
           <p className={classes.privacyText}>
