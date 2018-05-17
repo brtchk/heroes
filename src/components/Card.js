@@ -17,6 +17,9 @@ const styles = {
     [media.lessThan('large')]: {
       width: '100%',
     },
+    [media.lessThan('small')]: {
+      height: 420,
+    },
   },
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
@@ -48,22 +51,47 @@ const styles = {
   },
   info: {
     display: 'flex',
+    justifyContent: 'space-between',
     fontSize: fonts.size.xxs,
+    width: '90%',
     position: 'absolute',
-    left: 20,
+    left: '50%',
+    transform: 'translateX(-50%)',
     top: 20,
     [media.lessThan('small')]: {
       fontSize: fonts.size.xxxs,
+      flexDirection: 'column',
     },
   },
   infoChild: {
-    marginLeft: 5,
     display: 'flex',
     alignItems: 'center',
+    [media.lessThan('small')]: {
+      margin: '8px 0',
+    },
   },
   infoText: {
     display: 'inline-block',
     marginRight: 25,
+  },
+  sold: {
+    textAlign: 'center',
+    backgroundColor: colors.orange,
+    color: colors.white,
+    borderRadius: 20,
+    padding: '5px 20px 7px',
+    textWrap: 'none',
+  },
+  price: {
+    width: 150,
+    textAlign: 'center',
+    backgroundColor: colors.white,
+    color: colors.orange,
+    borderRadius: 20,
+    padding: '5px 20px 7px',
+    [media.lessThan('small')]: {
+      width: 140,
+    },
   },
   icon: {
     marginRight: 10,
@@ -87,23 +115,29 @@ const styles = {
 }
 
 const Card = ({
-  classes, to, image, title, text, age, dates,
+  classes, path, image, title, text, age, date, price, sold,
 }) => (
-  <Link to={to}>
+  <Link to={path}>
     <div
       className={classes.container}
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className={classes.overlay}>
         <div className={classes.info}>
-          <p className={classes.infoChild}>
-            <Calendar className={classes.icon} />
-            <span className={classes.infoText}>{dates}</span>
-          </p>
-          <p className={classes.infoChild}>
-            <Age className={classes.icon} />
-            <span className={classes.infoText}>{age}</span>
-          </p>
+          <div className={classes.infoChild}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Calendar className={classes.icon} />
+              <span className={classes.infoText}>{date}</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Age className={classes.icon} />
+              <span className={classes.infoText}>{age}</span>
+            </div>
+          </div>
+          <div className={classes.infoChild}>
+            {sold && <p className={classes.sold}>Распродано!</p>}
+            {!sold && <p className={classes.price}>{price} рубей</p>}
+          </div>
         </div>
         <p className={classes.title}>{title}</p>
         <p className={`${classes.bottomBlock} ${classes.text}`}>{text}</p>

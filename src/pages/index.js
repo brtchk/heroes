@@ -22,12 +22,6 @@ import cupImage from '../static/cup.png'
 import brilliantImage from '../static/brilliant.png'
 import mountainImage from '../static/mountain.png'
 import pinImage from '../static/pin.png'
-import smena1 from '../static/smena-1.jpg'
-import smena2 from '../static/smena-2.jpg'
-import smena3 from '../static/smena-3.jpg'
-import smena4 from '../static/smena-4.jpg'
-import smena5 from '../static/smena-5.jpg'
-import smena6 from '../static/smena-6.jpg'
 import member1 from '../static/member-1.jpg'
 import member2 from '../static/member-2.jpg'
 import member3 from '../static/member-3.jpg'
@@ -42,6 +36,8 @@ import mainVideo from '../static/7.mp4'
 import percentImage from '../static/percent.png'
 
 import { colors, fonts, dimensions, media } from '../theme'
+
+import { SMENAS } from '../config/smena-apply'
 
 const styles = {
   container: {
@@ -358,54 +354,9 @@ const IndexPage = ({ classes }) => (
       </div>
       <div className={classes.cardsBlock}>
         <div className={classes.cards}>
-          <Card
-            image={smena1}
-            to="smena-1"
-            title="Город Сотрудничества"
-            text="Для ребят, кто хочет научиться работать в команде, выстраивать эффективные взаимоотношения с окружающими и получать от этого удовольствие."
-            dates="1–14 июня"
-            age="10–17 лет"
-          />
-          <Card
-            image={smena2}
-            to="smena-2"
-            title="Я и Мир Вокруг"
-            text="Поможет по-новому взглянуть на себя, открыть, принять и продемонстрировать миру себя настоящего, талантливого, уникального."
-            dates="16–29 июня"
-            age="10–17 лет"
-          />
-          <Card
-            image={smena3}
-            to="smena-3"
-            title="Самостоятельность"
-            text="Поможет научиться проявлять инициативу, принимать и нести ответственность за свои решения, подготовить к первым шагам взрослой независимой жизни."
-            dates="1–14 июля"
-            age="10–17 лет"
-          />
-          <Card
-            image={smena4}
-            to="smena-4"
-            title="Воля, смелость, отвага"
-            text="Для настоящих героев, кто хочет проверить свои возможности, раскрыть в себе дремлющий потенциал и уверен, что способен на большее."
-            dates="16–29 июля"
-            age="10–17 лет"
-          />
-          <Card
-            image={smena5}
-            to="smena-5"
-            title="Ответственность и&nbsp;принятие решений"
-            text="Раскроет секреты, как управлять собственной жизнью, пользоваться уважением взрослых и восхищением сверстников."
-            dates="31 июля–13 августа"
-            age="10–17 лет"
-          />
-          <Card
-            image={smena6}
-            to="smena-6"
-            title="Путешествие к развитию личности"
-            text="База для воспитания настоящих лидеров, незаурядных и ярких, способных не только вдохновить, но и повести за собой сотни людей к победе."
-            dates="15–28 августа"
-            age="10–17 лет"
-          />
+          {
+            SMENAS.map(smena => <Card key={smena.title} {...smena} />)
+          }
         </div>
         <div className={classes.cardsSubtl}>
           Не знаете, какую смену выбрать? Позвоните <Phone /> — мы проконсультируем.
