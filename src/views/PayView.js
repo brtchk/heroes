@@ -160,11 +160,11 @@ class Pay extends Component {
             ref={(_ref) => { this.form = _ref; }}
           >
             <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="1524497548021DEMO" />
-            <input className="tinkoffPayRow" type="hidden" name="frame" value="true" />
+            <input className="tinkoffPayRow" type="hidden" name="frame" value="false" />
             <input className="tinkoffPayRow" type="hidden" name="language" value="ru" />
             <input className="tinkoffPayRow" type="text" placeholder="Сумма заказа" name="amount" required disabled value={1} />
-            <input className="tinkoffPayRow" type="hidden" placeholder="Номер заказа" name="order" disabled value={randomId(20, '0')} />
-            <input className="tinkoffPayRow" type="hidden" placeholder="Описание заказа" name="description" disabled value={description} />
+            <input className="tinkoffPayRow" type="text" placeholder="Номер заказа" name="order" value={12} />
+            <input className="tinkoffPayRow" type="text" placeholder="Описание заказа" name="description" value={description} />
             <input className="tinkoffPayRow" type="text" placeholder="ФИО плательщика" name="name" required />
             <input className="tinkoffPayRow" type="text" placeholder="E-mail" name="email" required />
             <input className="tinkoffPayRow" type="text" placeholder="Контактный телефон" name="phone" required />
