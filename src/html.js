@@ -98,8 +98,11 @@ module.exports = class HTML extends React.Component {
             }}
           />
           <noscript>
-            <div>
-              <img src="https://mc.yandex.ru/watch/48533663" style="position:absolute; left:-9999px;" alt="" />
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `<img src="https://mc.yandex.ru/watch/48533663" style="position:absolute; left:-9999px;" alt="" />`
+              }}
+            >
             </div>
           </noscript>
           <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js" />

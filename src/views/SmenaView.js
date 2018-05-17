@@ -276,6 +276,11 @@ const SmenaView = ({
         <p className={classes.title} style={{ marginTop: 0 }}>
           {smena.title}
         </p>
+        <Video
+          source={smena.video}
+          textStyle={{ top: '70%', width: '100%' }}
+          title="Смотреть рассказ  про смену"
+        />
         <SmenaInfo
           smena={{
             age: smena.age,
@@ -291,11 +296,6 @@ const SmenaView = ({
         <div className={classes.highlightBlock}>
           {smena.intro.highlight}
         </div>
-        <Video
-          source={smena.video}
-          textStyle={{ top: '70%', width: '100%' }}
-          title="Смотреть рассказ  про смену"
-        />
         <p className={`${classes.text} ${classes.textBlock}`}>
           {smena.intro.text2}
         </p>
