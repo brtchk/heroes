@@ -431,7 +431,7 @@ const IndexPage = ({ classes }) => (
         />
       </div>
       <div className={classes.faqBlock}>
-        <p className={classes.title} id="faq">Ответы на вопросы</p>
+        <p className={classes.title} id="faq">Родителям</p>
         <div className={classes.questions}>
           <Question
             question="Почему проект называется ГЕРОИ?"
@@ -498,6 +498,35 @@ const IndexPage = ({ classes }) => (
             question="Что такое спортивно-тактические игры?"
             answer="Спортивно-тактические игры представляют собой сочетание различных блоков заданий, таких как физическая, тактико-специальная, горно-высотная, огневая подготовка, основы выживания, и правила безопасного поведения в экстренных городских ситуациях. Такой комплекс позволяет развить внимание, скорость реакции, стрессоустойчивость, быструю адаптацию организма к изменению обстановки, быстро интуитивно мыслить в стрессовой обстановке, анализировать ситуацию, умение работать в команде, развивает стратегическое мышление и лидерские качества, уверенность в себе, решительность, смелость, самостоятельность, ответственность за принятие решений."
           />
+        </div>
+        <div
+          style={{
+            width: '100%',
+            height: 200,
+            backgroundColor: colors.brown,
+            color: 'white',
+            display: 'flex',
+            flexDirection: 'column',
+            textAlign: 'center',
+            alignItems: 'center',
+            fontSize: fonts.size.xxs,
+            padding: 25,
+          }}
+        >
+          <p>Скачать документы:</p>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-around',
+              maxWidth: 400,
+              width: '90%',
+              marginTop: 50,
+              textDecoration: 'underline',
+            }}
+          >
+            <a href="agreement.pdf" download="heroes-agreement.pdf"> &#11015; Договор</a>
+            <a href="brochure.pdf" download="heroes-brochure.pdf"> &#11015; Брошюра ГЕРОИ</a>
+          </div>
         </div>
       </div>
     </div>
