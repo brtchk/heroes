@@ -76,8 +76,8 @@ const styles = {
   },
   sold: {
     textAlign: 'center',
-    backgroundColor: colors.orange,
-    color: colors.white,
+    backgroundColor: colors.white,
+    color: colors.orange,
     borderRadius: 20,
     padding: '5px 20px 7px',
     textWrap: 'none',
@@ -85,8 +85,8 @@ const styles = {
   price: {
     width: 150,
     textAlign: 'center',
-    backgroundColor: colors.white,
-    color: colors.orange,
+    backgroundColor: colors.orange,
+    color: colors.white,
     borderRadius: 20,
     padding: '5px 20px 7px',
     [media.lessThan('small')]: {
