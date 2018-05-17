@@ -37,6 +37,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-117761804-1',
+        head: false,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-facebook-pixel',
       options: {
         pixelId: '2060131047573963',
