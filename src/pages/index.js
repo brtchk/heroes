@@ -17,6 +17,7 @@ import Phone from '../components/Phone'
 import Video from '../components/Video'
 
 import heroesWhite from '../static/heroes-white.svg'
+import rassrochka from '../static/rassrochka.svg'
 import bgImage from '../static/heroes-bg.jpg'
 import cupImage from '../static/cup.png'
 import brilliantImage from '../static/brilliant.png'
@@ -33,7 +34,6 @@ import image2 from '../static/smena-1-2.jpg'
 import image3 from '../static/smena-1-3.jpg'
 import image4 from '../static/smena-1-4.jpg'
 import mainVideo from '../static/7.mp4'
-import percentImage from '../static/percent.png'
 
 import { colors, fonts, dimensions, media } from '../theme'
 
@@ -175,7 +175,7 @@ const styles = {
     marginTop: 70,
   },
   cardsBlock: {
-    marginTop: 55,
+    marginTop: 35,
     marginBottom: 80,
   },
   cards: {
@@ -274,15 +274,6 @@ const styles = {
   qaColumn: {
     width: '49%',
   },
-  percentImage: {
-    position: 'absolute',
-    right: 0,
-    width: 200,
-    // height: '100%',
-    [media.lessThan('medium')]: {
-      display: 'none',
-    },
-  }
 }
 
 const IndexPage = ({ classes }) => (
@@ -343,14 +334,15 @@ const IndexPage = ({ classes }) => (
       </p>
       <div style={{
         display: 'flex',
+        flexDirection: 'column',
         position: 'relative',
         width: '100%',
-        justifyContent: 'center',
+        alignItems: 'center',
       }}>
         <p className={classes.subtl}>
           В программах сочетаются элементы физического и психо-эмоционального развития — возможность обогатиться бесценным опытом, незабываемыми эмоциями и погрузиться в захватывающие приключения. Вместе с командой дети преодолевают препятствия, формируют доверие к окружающим и уверенность в себе, здоровые привычки и навыки коммуникации.
         </p>
-        <img src={percentImage} className={classes.percentImage} />
+        <img src={rassrochka} style={{ marginTop: 30, maxWidth: '100%' }} />
       </div>
       <div className={classes.cardsBlock}>
         <div className={classes.cards}>
