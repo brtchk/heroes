@@ -120,6 +120,7 @@ const styles = {
   },
   highlightBlock: {
     backgroundColor: colors.lightBlue,
+    color: colors.white,
     padding: '60px 30px',
     margin: '50px 0',
     textAlign: 'center',
