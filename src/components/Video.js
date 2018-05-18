@@ -14,7 +14,7 @@ const styles = {
     top: '65%',
     left: '50%',
     transform: 'translateX(-50%)',
-    width: '100%',
+    width: '60%',
     [media.lessThan('small')]: {
       fontSize: fonts.size.xxs,
     },
@@ -41,12 +41,12 @@ class Video extends Component {
   }
 
   render() {
-    const { classes, title, source, textStyle } = this.props
+    const { classes, title, source, cover, textStyle } = this.props
     const { showTitle } = this.state
 
     return (
       <div style={{ position: 'relative' }}>
-        <Player src={source} ref={ref => { this.player = ref; }}>
+        <Player src={source} poster={cover} ref={ref => { this.player = ref; }}>
           <BigPlayButton position="center" />
           <LoadingSpinner />
         </Player>

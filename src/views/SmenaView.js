@@ -278,8 +278,9 @@ const SmenaView = ({
         </p>
         <Video
           source={smena.video}
-          textStyle={{ top: '70%', width: '100%' }}
-          title="Смотреть рассказ  про смену"
+          cover={smena.videoCover}
+          textStyle={{ top: '70%' }}
+          title={`Про смену ${smena.title} за 30 секунд`}
         />
         <SmenaInfo
           smena={{

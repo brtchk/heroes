@@ -12,6 +12,13 @@ import videoSmena4 from '../static/4.mp4'
 import videoSmena5 from '../static/5.mp4'
 import videoSmena6 from '../static/6.mp4'
 
+import videoCover1 from '../static/smena1-video-cover.jpg'
+import videoCover2 from '../static/smena2-video-cover.jpg'
+import videoCover3 from '../static/smena3-video-cover.jpg'
+import videoCover4 from '../static/smena4-video-cover.jpg'
+import videoCover5 from '../static/smena5-video-cover.jpg'
+import videoCover6 from '../static/smena6-video-cover.jpg'
+
 import image1 from '../static/smena-1-1.jpg'
 import image2 from '../static/smena-1-2.jpg'
 import image3 from '../static/smena-1-3.jpg'
@@ -93,6 +100,7 @@ export const SMENAS = [
     price: '39 900',
     image: mainImageSmena1,
     video: videoSmena1,
+    videoCover: videoCover1,
     applyRoute: 'smena-1-apply',
     payRoute: 'smena-1-pay',
     amoForm: 'https://forms.amocrm.ru/trrwcc',
@@ -231,6 +239,7 @@ export const SMENAS = [
     price: '41 500',
     image: mainImageSmena2,
     video: videoSmena2,
+    videoCover: videoCover2,
     applyRoute: 'smena-2-apply',
     payRoute: 'smena-2-pay',
     amoForm: 'https://forms.amocrm.ru/trrwcx',
@@ -369,6 +378,7 @@ export const SMENAS = [
     price: '44 900',
     image: mainImageSmena3,
     video: videoSmena3,
+    videoCover: videoCover3,
     applyRoute: 'smena-3-apply',
     payRoute: 'smena-3-pay',
     amoForm: 'https://forms.amocrm.ru/trrwzw',
@@ -521,6 +531,7 @@ export const SMENAS = [
     price: '44 900',
     image: mainImageSmena4,
     video: videoSmena4,
+    videoCover: videoCover4,
     applyRoute: 'smena-4-apply',
     payRoute: 'smena-4-pay',
     amoForm: 'https://forms.amocrm.ru/trrwzm',
@@ -661,6 +672,7 @@ export const SMENAS = [
     price: '41 500',
     image: mainImageSmena5,
     video: videoSmena5,
+    videoCover: videoCover5,
     applyRoute: 'smena-5-apply',
     payRoute: 'smena-5-pay',
     amoForm: 'https://forms.amocrm.ru/trrwmr',
@@ -801,6 +813,7 @@ export const SMENAS = [
     price: '39 500',
     image: mainImageSmena6,
     video: videoSmena6,
+    videoCover: videoCover6,
     applyRoute: 'smena-6-apply',
     payRoute: 'smena-6-pay',
     amoForm: 'https://forms.amocrm.ru/trrwdw',

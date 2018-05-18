@@ -33,6 +33,7 @@ import image1 from '../static/smena-1-1.jpg'
 import image2 from '../static/smena-1-2.jpg'
 import image3 from '../static/smena-1-3.jpg'
 import image4 from '../static/smena-1-4.jpg'
+import videoCover from '../static/main-video-cover.jpg'
 import mainVideo from '../static/7.mp4'
 
 import { colors, fonts, dimensions, media } from '../theme'
@@ -324,7 +325,8 @@ const IndexPage = ({ classes }) => (
       </div>
       <Video
         source={mainVideo}
-        title="Смотреть рассказ про лагерь"
+        cover={videoCover}
+        title="Про лагерь ГЕРОИ за 1 минуту"
       />
       <p
         className={classes.title}
