@@ -11,7 +11,7 @@ module.exports = {
         mergeSecurityHeaders: false,
         headers: {
           "/*": [
-            "X-Frame-Options: ALLOW-FROM='https?://([^/]+\.)?<heroescamp\.ru>|([^/]+\.)?webvisor\.com/'",
+            // "X-Frame-Options: ALLOW-FROM='https?://([^/]+\.)?<heroescamp\.ru>|([^/]+\.)?webvisor\.com/'",
             "X-XSS-Protection: 1; mode=block",
             "X-Content-Type-Options: nosniff",
           ],
