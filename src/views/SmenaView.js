@@ -415,12 +415,25 @@ const SmenaView = ({
           >
             Отправить заявку
           </Link> */}
-          <a
-            href={smena.amoForm}
-            className={classes.button}
-          >
-            Отправить заявку
-          </a>
+          {
+            !smena.sold ?
+              <a
+                href={smena.amoForm}
+                className={classes.button}
+              >
+                Отправить заявку
+              </a> :
+              <div
+                className={classes.button}
+                style={{
+                  color: colors.grey.medium,
+                  backgroundColor: colors.grey.light,
+                  fontSize: fonts.size.xxs,
+                }}
+              >
+              Распродано!
+            </div>
+          }
           {/* <Link
             to={smena.payRoute}
             className={classes.button}
@@ -448,16 +461,30 @@ const SmenaView = ({
           >
             Отправить заявку
           </Link> */}
-          <a
-            href={smena.amoForm}
+          {
+            !smena.sold ?
+              <a
+              href={smena.amoForm}
+              className={classes.button}
+              style={{
+                fontSize: fonts.size.xxs,
+                marginTop: 0,
+              }}
+            >
+              Отправить заявку
+            </a> :
+            <div
             className={classes.button}
             style={{
+              color: colors.grey.medium,
+              backgroundColor: colors.grey.light,
               fontSize: fonts.size.xxs,
               marginTop: 0,
             }}
           >
-            Отправить заявку
-          </a>
+            Распродано!
+          </div>
+          }
         </div>
       </div>
     </div>
