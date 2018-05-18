@@ -76,6 +76,10 @@ button {
 
 /* VIDEO PLAYER */
 
+.video-react {
+  font-family: inherit !important;
+}
+
 .video-react-video {
   background-color: rgb(255, 91, 46) !important;
 }
@@ -93,6 +97,10 @@ button {
   top: 46% !important;
   font-size: 15vw !important;
 }
+
+/* .video-react-menu {
+  font-family: sans-serif !important;
+} */
 
 /* TINKOFF FORM */
 
