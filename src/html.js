@@ -106,6 +106,11 @@ module.exports = class HTML extends React.Component {
             </div>
           </noscript>
           <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js" />
+          <script
+            type="text/javascript"
+            src="//cdn.callbackhunter.com/cbh.js?hunter_code=47b213987e2e00f4ce4927c5c059733d"
+            charset="UTF-8"
+          />
         </body>
       </html>
     )
