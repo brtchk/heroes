@@ -27,7 +27,7 @@ export const SMENAS = [
     age: '10–17 лет',
     date: '16–29 июня',
     time: '14 дней',
-    price: '54 800',
+    price: '41 500',
     sold: false,
   },
   {
@@ -39,7 +39,7 @@ export const SMENAS = [
     age: '10–17 лет',
     date: '1–14 июля',
     time: '14 дней',
-    price: '54 800',
+    price: '44 900',
     sold: false,
   },
   {
@@ -51,7 +51,7 @@ export const SMENAS = [
     age: '10–17 лет',
     date: '16–29 июля',
     time: '14 дней',
-    price: '54 800',
+    price: '44 900',
     sold: false,
   },
   {
@@ -63,7 +63,7 @@ export const SMENAS = [
     age: '10–17 лет',
     date: '31 июля – 13 августа',
     time: '14 дней',
-    price: '54 800',
+    price: '41 500',
     sold: false,
   },
   {
@@ -75,7 +75,7 @@ export const SMENAS = [
     age: '10–17 лет',
     date: '15–28 августа',
     time: '14 дней',
-    price: '54 800',
+    price: '39 500',
     sold: false,
   },
 ]
