@@ -116,16 +116,19 @@ const styles = {
   },
   taglineContainer: {
     backgroundColor: colors.lightBlue,
-    minHeight: 345,
+    height: 480,
     padding: '50px 20px',
     display: 'flex',
+    [media.lessThan('small')]: {
+      height: 380,
+    },
   },
   tagline: {
     margin: 'auto',
     textAlign: 'center',
     lineHeight: 1.3,
-    color: colors.brown,
-    fontSize: fonts.size.m,
+    color: colors.white,
+    fontSize: fonts.size.l,
     maxWidth: 815,
     [media.lessThan('small')]: {
       fontSize: fonts.size.xs,
