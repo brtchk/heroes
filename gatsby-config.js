@@ -5,7 +5,19 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-jss',
-    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        mergeSecurityHeaders: false,
+        headers: {
+          "/*": [
+            "X-Frame-Options: ALLOW-FROM='https?://([^/]+\.)?<heroescamp\.ru>|([^/]+\.)?webvisor\.com/'",
+            "X-XSS-Protection: 1; mode=block",
+            "X-Content-Type-Options: nosniff",
+          ],
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
