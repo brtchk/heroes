@@ -5,7 +5,8 @@ import injectSheet from 'react-jss'
 import Phone from './Phone'
 import Mail from './Mail'
 
-import fbIcon from '../static/fb.png'
+import fbIcon from '../static/facebook.svg'
+import ytIcon from '../static/youtube.svg'
 
 import { colors, fonts, dimensions, media } from '../theme'
 
@@ -19,17 +20,17 @@ const styles = {
   container: {
     minHeight: 125,
     display: 'flex',
-    alignItems: 'baseline',
+    alignItems: 'center',
     justifyContent: 'space-between',
     maxWidth: dimensions.maxWidth,
     width: '100%',
     margin: '0 auto',
-    fontSize: fonts.size.xs,
+    fontSize: fonts.size.xxs,
     [media.lessThan('large')]: {
-      fontSize: fonts.size.xxs,
+      fontSize: fonts.size.xxxs,
       flexDirection: 'column',
       alignItems: 'flex-start',
-      justifyContent: 'flex-start',
+      lineHeight: 3,
       padding: `${dimensions.padding.horizontal}px`,
       margin: '0',
     },
@@ -44,7 +45,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'baseline',
-    width: '70%',
+    width: '55%',
     [media.lessThan('large')]: {
       flexDirection: 'column',
       alignItems: 'flex-start',
@@ -66,11 +67,22 @@ const styles = {
       lineHeight: 1.3,
     },
   },
-  fb: {
-    width: 45,
+  yt: {
+    width: 40,
     [media.lessThan('large')]: {
       marginTop: 20,
-      width: 30,
+      width: 26,
+      marginLeft: 0,
+      marginRight: 3,
+    },
+  },
+  fb: {
+    width: 30,
+    marginLeft: 20,
+    [media.lessThan('large')]: {
+      marginTop: 20,
+      width: 19,
+      marginLeft: 10,
     },
   },
 }
@@ -88,22 +100,29 @@ class Footer extends Component {
             <Mail />
             <p>Москва, Конный переулок, 12</p>
           </div>
-          <div className={classes.right}>
-            <Link
-              to="terms-of-payment"
-              className={classes.smallText}
-            >
-              Условия оплаты
-            </Link>
-            <Link
-              to="requisites"
-              className={classes.smallText}>
-                Реквизиты
-            </Link>
-            <a href="https://www.facebook.com/heroeslivehere/" target="_blank" rel="noopener noreferrer">
-              <img src={fbIcon} className={classes.fb} />
-            </a>
-          </div>
+
+            <div style={{ display: 'flex' }}>
+              <Link
+                to="terms-of-payment"
+                className={classes.smallText}
+              >
+                Условия оплаты
+              </Link>
+              <Link
+                to="requisites"
+                className={classes.smallText}>
+                  Реквизиты
+              </Link>
+            </div>
+            <div>
+              <a href="https://www.youtube.com/channel/UCdAhIq6cS34Kki9NKkmQRew" target="_blank" rel="noopener noreferrer">
+                <img src={ytIcon} className={classes.yt} />
+              </a>
+              <a href="https://www.facebook.com/heroeslivehere/" target="_blank" rel="noopener noreferrer">
+                <img src={fbIcon} className={classes.fb} />
+              </a>
+            </div>
+
         </div>
       </div>
     )
