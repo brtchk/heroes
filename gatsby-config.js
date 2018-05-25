@@ -49,5 +49,16 @@ module.exports = {
         pixelId: '2060131047573963',
       },
     },
+    {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        trackingId: 49014596,
+        webvisor: true,
+        trackHash: true,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+      },
+    },
   ],
 }
