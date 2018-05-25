@@ -21,8 +21,6 @@
     "react-helmet": "^5.2.0",
     "react-image-gallery": "^0.8.7",
     "react-motion": "^0.5.2",
-    "react-scroll-to-element": "^0.2.0",
-    "react-scrollspy": "^3.3.5",
     "react-select": "^1.2.1",
     "video-react": "^0.10.4"
   },

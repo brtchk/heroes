@@ -1,11 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import injectSheet from 'react-jss'
-import Scrollspy from 'react-scrollspy'
 import { Player, BigPlayButton } from 'video-react'
 import 'video-react/dist/video-react.css'
 
-import Scroll from '../components/Scroll'
 import Thesis from '../components/Thesis'
 import Card from '../components/Card'
 import Member from '../components/Member'
@@ -93,6 +91,7 @@ const styles = {
     },
   },
   button: {
+    cursor: 'pointer',
     margin: '0 auto',
     display: 'flex',
     alignItems: 'center',
@@ -292,14 +291,18 @@ const IndexPage = ({ classes }) => (
           <p className={classes.coverSubtl}>
             Территория раскрытия возможностей
           </p>
-          <Scroll type="id" element="smena">
-            <a
-              href="#"
-              className={classes.button}
-            >
-              Выбрать смену
-            </a>
-          </Scroll>
+          <div
+            onClick={() => {
+              const elem = document.getElementById('smena')
+
+              if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+            className={classes.button}
+          >
+            Выбрать смену
+          </div>
         </div>
       </div>
     </div>

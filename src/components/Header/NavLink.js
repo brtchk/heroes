@@ -1,8 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import Scrollspy from 'react-scrollspy'
 
-import Scroll from '../Scroll'
 import { fonts } from '../../theme'
 
 const styles = {
