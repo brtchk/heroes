@@ -2,13 +2,11 @@ import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import Menu from 'react-hamburger-menu'
 import injectSheet from 'react-jss'
-import Scrollspy from 'react-scrollspy'
 
 import NavLink from './NavLink';
 import Logo from '../Logo'
 import Phone from '../Phone'
 import Mail from '../Mail'
-import Scroll from '../Scroll'
 import CallForm from '../CallForm'
 
 import fbIcon from '../../static/fb.png'
@@ -43,6 +41,7 @@ const styles = {
     paddingLeft: dimensions.padding.horizontal,
   },
   link: {
+    cursor: 'pointer',
     display: 'block',
     flexDirection: 'column',
     color: colors.white,
@@ -120,29 +119,37 @@ const MenuItems = ({ menuItems, classes, handleClick }) => (
   </div>
 )
 
-const MenuItemsScroll = ({ menuItems, classes, handleClick }) => (
-  <Scrollspy
-    items={ ['smena', 'team', 'place', 'faq'] }
-    currentClassName="is-active"
-    offset={-300}
-  >
-    {menuItems.map(item => (
-      <Scroll
-        key={item.title}
-        type="id"
-        element={item.route}
-        handleClick={handleClick}
-      >
-        <a
-          href="#"
-          className={classes.link}
-        >
-          {item.title}
-        </a>
-      </Scroll>
-    ))}
-  </Scrollspy>
-)
+class MenuItemsScroll extends Component {
+  handleClick = (item) => {
+    this.props.handleClick();
+
+    const elem = document.getElementById(item.route)
+
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  render() {
+    const { menuItems, classes } = this.props;
+
+    return (
+      <div>
+        {menuItems.map(item => (
+          <div
+            key={item.route}
+            ref={(_ref) => { this[item.route] = _ref; }}
+            onClick={() => this.handleClick(item)}
+            href="#"
+            className={classes.link}
+          >
+            {item.title}
+          </div>
+        ))}
+      </div>
+    )
+  }
+}
 
 class HeaderMobile extends Component {
   constructor(props) {

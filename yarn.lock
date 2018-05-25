@@ -6936,22 +6936,6 @@ react-router@^4.1.1, react-router@^4.2.0:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-scroll-to-element@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/react-scroll-to-element/-/react-scroll-to-element-0.2.0.tgz#33f3f85211d4e2a0881c9deccf42e57799c4e000"
-  dependencies:
-    prop-types "^15.6.0"
-    react "^16.1.1"
-    smoothscroll-polyfill "^0.4.0"
-
-react-scrollspy@^3.3.5:
-  version "3.3.5"
-  resolved "https://registry.yarnpkg.com/react-scrollspy/-/react-scrollspy-3.3.5.tgz#e3e605bfc153a23f5fdf1279dd9f397d6e76e228"
-  dependencies:
-    babel-runtime "^6.26.0"
-    classnames "^2.2.5"
-    prop-types "^15.5.10"
-
 react-select@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-select/-/react-select-1.2.1.tgz#a2fe58a569eb14dcaa6543816260b97e538120d1"
@@ -6983,15 +6967,6 @@ react@^15.6.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
-
-react@^16.1.1:
-  version "16.3.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
 
 read-cache@^1.0.0:
   version "1.0.0"
@@ -7767,10 +7742,6 @@ signedsource@^1.0.0:
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
-
-smoothscroll-polyfill@^0.4.0:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.3.tgz#94e5f2d604efcceb53f23ff0380d7ea7280d4bff"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
-import Scrollspy from 'react-scrollspy'
 import injectSheet from 'react-jss'
 
-import Scroll from '../Scroll'
 import Logo from '../Logo'
 import CallForm from '../CallForm'
 import Phone from '../Phone'
@@ -53,6 +51,7 @@ const styles = {
   },
   link: {
     display: 'inline-block',
+    cursor: 'pointer',
     textDecoration: 'none',
     margin: '0 12px',
     fontSize: fonts.size.xxs,
@@ -101,24 +100,35 @@ const MenuItems = ({ menuItems, classes }) => (
   </div>
 )
 
-const MenuItemsScroll = ({ menuItems, classes }) => (
-  <Scrollspy
-    items={ ['smena', 'team', 'place', 'faq'] }
-    currentClassName="is-active"
-    offset={-300}
-  >
-    {menuItems.map(item => (
-      <Scroll type="id" element={item.route} key={item.title}>
-        <a
-          href="#"
-          className={classes.link}
-        >
-          {item.title}
-        </a>
-      </Scroll>
-    ))}
-  </Scrollspy>
-)
+class MenuItemsScroll extends Component {
+  handleClick = (item) => {
+    const elem = document.getElementById(item.route)
+
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  render() {
+    const { menuItems, classes } = this.props;
+
+    return (
+      <div>
+        {menuItems.map(item => (
+          <div
+            key={item.route}
+            ref={(_ref) => { this[item.route] = _ref; }}
+            onClick={() => this.handleClick(item)}
+            href="#"
+            className={classes.link}
+          >
+            {item.title}
+          </div>
+        ))}
+      </div>
+    )
+  }
+}
 
 class Header extends Component {
   constructor(props) {
