@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from '../components/Header/Header'
+import Popup from '../components/Popup'
 import Footer from '../components/Footer'
 import HaveQuestions from '../components/HaveQuestions'
 import fbGraph from '../static/fb-graph.png'
@@ -31,6 +32,7 @@ const Layout = ({ children, data, location }) => (
     </div>
     <HaveQuestions />
     <Footer />
+    <Popup />
   </div>
 )
 
