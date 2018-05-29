@@ -26,6 +26,8 @@ import image4 from '../static/smena-1-4.jpg'
 
 const images = [image1, image2, image3, image4];
 
+export const DEFAULT_AMO = 'https://forms.amocrm.ru/tvvxrm'
+
 export const MEMBERS = [
   {
     name: 'Сергей Гуров',
