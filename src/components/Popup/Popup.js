@@ -210,7 +210,7 @@ export class Popup extends Component {
                 </div>
                 <div className={classes.popupRight}>
                   <a
-                    href={DEFAULT_AMO_FORM}
+                    href="https://forms.amocrm.ru/tvvxrm"
                     target="_blank"
                     className={classes.button}
                     style={{ marginTop: 5, height: 50 }}
