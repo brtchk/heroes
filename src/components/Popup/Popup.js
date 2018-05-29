@@ -7,7 +7,7 @@ import CrossIcon from '../Icons/Cross'
 
 import { colors, fonts, media } from '../../theme'
 
-import { DEFAULT_AMO } from '../../config/constants'
+import { DEFAULT_AMO_FORM } from '../../config/constants'
 
 const styles = {
   popupOverlay: {
@@ -210,7 +210,7 @@ export class Popup extends Component {
                 </div>
                 <div className={classes.popupRight}>
                   <a
-                    href={DEFAULT_AMO}
+                    href={DEFAULT_AMO_FORM}
                     target="_blank"
                     className={classes.button}
                     style={{ marginTop: 5, height: 50 }}
