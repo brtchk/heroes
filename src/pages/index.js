@@ -47,12 +47,21 @@ const styles = {
   },
   cover: {
     backgroundImage: `url(${bgImage})`,
-    height: 633,
+    height: 733,
     width: '100%',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     color: colors.white,
     textAlign: 'center',
+    [media.lessThan('medium')]: {
+      height: 600,
+    },
+    [media.lessThan('small')]: {
+      height: 533,
+    },
+    [media.lessThan('xsmall')]: {
+      height: 500,
+    },
   },
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -62,33 +71,46 @@ const styles = {
   },
   coverContent: {
     margin: 'auto',
-  },
-  logo: {
-    boxSizing: 'content-box',
-    height: 70,
-    padding: '0 25px',
-    [media.lessThan('small')]: {
-      height: 40,
+    [media.lessThan('large')]: {
       padding: '0 15px',
+    },
+    [media.lessThan('small')]: {
+      padding: '0 15px',
+      lineHeight: 1.15,
     },
   },
   coverTitle: {
     fontSize: fonts.size.xxl,
+    marginTop: -200,
     marginBottom: 20,
     maxWidth: dimensions.maxWidth,
-    [media.lessThan('small')]: {
+    [media.lessThan('large')]: {
+      fontSize: fonts.size.xxl - 20,
+    },
+    [media.lessThan('medium')]: {
+      marginTop: -210,
       fontSize: fonts.size.xl + 25,
+    },
+    [media.lessThan('small')]: {
+      marginTop: -110,
+      fontSize: fonts.size.xl + 15,
+    },
+    [media.lessThan('xsmall')]: {
+      marginTop: -90,
     },
   },
   coverSubtl: {
     lineHeight: 1.2,
     fontSize: fonts.size.s,
     fontSize: 44,
-    width: '80%',
+    width: '90%',
     maxWidth: 900,
     margin: 'auto',
     marginBottom: 30,
-    [media.lessThan('small')]: {
+    [media.lessThan('large')]: {
+      fontSize: fonts.size.xs + 4,
+    },
+    [media.lessThan('medium')]: {
       fontSize: fonts.size.xs,
     },
   },
@@ -279,6 +301,23 @@ const styles = {
   qaColumn: {
     width: '49%',
   },
+  video: {
+    width: '90%',
+    maxWidth: 704,
+    position: 'absolute !important',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    top: 470,
+    [media.lessThan('medium')]: {
+      top: 360,
+    },
+    [media.lessThan('small')]: {
+      top: 420,
+    },
+    [media.lessThan('xsmall')]: {
+      top: 450,
+    },
+  },
 }
 
 class IndexPage extends Component {
@@ -291,27 +330,20 @@ class IndexPage extends Component {
           <div className={classes.overlay}>
             <div className={`${classes.coverContent} fade`}>
               <h1 className={classes.coverTitle}>
-                Летний лагерь
-                <Logo className={classes.logo} />
+                Летний лагерь ГЕРОИ
               </h1>
               <p className={classes.coverSubtl}>
                 Территория раскрытия возможностей
               </p>
-              <div
-                onClick={() => {
-                  const elem = document.getElementById('smena')
-
-                  if (elem) {
-                    elem.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                  }
-                }}
-                className={classes.button}
-              >
-                Выбрать смену
-              </div>
             </div>
           </div>
         </div>
+        <Video
+          containerClassName={classes.video}
+          source={mainVideo}
+          cover={videoCover}
+          title="Про лагерь ГЕРОИ за 1 минуту"
+        />
         <div className={classes.taglineContainer}>
           <div className={classes.tagline}>
             ГЕРОИ — это больше, чем летний детский лагерь. Значительнее, чем активный отдых на природе. Интенсивнее, чем подготовительные курсы. Ярче, чем выездной туризм. Лагерь ГЕРОИ — это среда обитания настоящего победителя.
@@ -335,11 +367,6 @@ class IndexPage extends Component {
               text="развитие стойкости духа, стратегического мышления, лидерских качеств, умения взаимодействовать в команде, и прежде всего, осознанное отношение к себе и окружающим."
             />
           </div>
-          <Video
-            source={mainVideo}
-            cover={videoCover}
-            title="Про лагерь ГЕРОИ за 1 минуту"
-          />
           <p
             className={classes.title}
             style={{ marginTop: 0 }}

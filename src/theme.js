@@ -40,7 +40,7 @@ export const dimensions = {
 };
 
 export const SIZES = {
-  xsmall: { min: 0, max: 599 },
+  xsmall: { min: 400, max: 599 },
   small: { min: 600, max: 779 },
   medium: { min: 780, max: 979 },
   large: { min: 980, max: 1279 },

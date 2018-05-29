@@ -41,11 +41,11 @@ class Video extends Component {
   }
 
   render() {
-    const { classes, title, source, cover, textStyle } = this.props
+    const { classes, title, source, cover, textStyle, style, containerClassName } = this.props
     const { showTitle } = this.state
 
     return (
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative', ...style }} className={containerClassName}>
         <Player src={source} poster={cover} ref={ref => { this.player = ref; }}>
           <BigPlayButton position="center" />
           <LoadingSpinner />
