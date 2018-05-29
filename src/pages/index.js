@@ -308,6 +308,7 @@ const styles = {
     left: '50%',
     transform: 'translateX(-50%)',
     top: 470,
+    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.4)',
     [media.lessThan('medium')]: {
       top: 360,
     },
