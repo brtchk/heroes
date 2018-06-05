@@ -19,6 +19,13 @@ module.exports = {
         },
       },
     },
+    'gatsby-transformer-yaml',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './_data',
+      },
+    },
     {
       resolve: 'gatsby-plugin-favicon',
       options: {

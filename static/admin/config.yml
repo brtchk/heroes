@@ -20,11 +20,11 @@ collections:
           - {label: "Cover Title", name: "title", widget: "string"}
           - {label: "Cover Subtitle", name: "subtl", widget: "string"}
           - {label: "Cover Image", name: "image", widget: "image"}
-      - {label: "Text on Blue", name: "text-on-blue", widget: "text"}
-      - label: "3 Points"
-        name: "points-3"
+      - {label: "Text on Blue", name: "textOnBlue", widget: "text"}
+      - label: "Points"
+        name: "points"
         widget: "list"
-        field:
+        fields:
           - label: "Point"
             name: "point"
             widget: "object"
@@ -34,16 +34,13 @@ collections:
       - label: "Subproducts"
         name: "subproducts"
         widget: "list"
-        field:
+        fields:
           - label: "Subproduct"
             name: "subproduct"
             widget: "relation"
             collection: "subproducts"
-            searchFields: ["name"]
-            valueField: "name"
-            fields:
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Text", name: "text", widget: "text"}
+            searchFields: ["title"]
+            valueField: "title"
 
   - name: "subproducts"
     label: "Subproducts"
@@ -53,21 +50,3 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
-      - label: "Cover"
-        name: "cover"
-        widget: "object"
-        fields:
-          - {label: "Cover Title", name: "title", widget: "string"}
-          - {label: "Cover Subtitle", name: "subtl", widget: "string"}
-          - {label: "Cover Image", name: "image", widget: "image"}
-      - {label: "Text on Blue", name: "text-on-blue", widget: "text"}
-      - label: "3 Points"
-        name: "points-3"
-        widget: "list"
-        field:
-          - label: "Point"
-            name: "point"
-            widget: "object"
-            fields:
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Text", name: "text", widget: "text"}
