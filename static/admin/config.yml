@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: github
+  repo: brtchk/heroes
+  branch: netlify-cms
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 collections:
@@ -23,21 +24,49 @@ collections:
       - label: "3 Points"
         name: "points-3"
         widget: "list"
+        field:
+          - label: "Point"
+            name: "point"
+            widget: "object"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Text", name: "text", widget: "text"}
+      - label: "Subproducts"
+        name: "subproducts"
+        widget: "list"
+        field:
+          - label: "Subproduct"
+            name: "subproduct"
+            widget: "relation"
+            collection: "subproducts"
+            searchFields: ["name"]
+            valueField: "name"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Text", name: "text", widget: "text"}
+
+  - name: "subproducts"
+    label: "Subproducts"
+    folder: "_data/subproducts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    extension: "yml"
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Cover"
+        name: "cover"
+        widget: "object"
         fields:
-          - label: "1"
-            name: "point-1"
-            widget: "object"
-            fields:
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Text", name: "text", widget: "text"}
-          - label: "2"
-            name: "point-2"
-            widget: "object"
-            fields:
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Text", name: "text", widget: "text"}
-          - label: "3"
-            name: "point-3"
+          - {label: "Cover Title", name: "title", widget: "string"}
+          - {label: "Cover Subtitle", name: "subtl", widget: "string"}
+          - {label: "Cover Image", name: "image", widget: "image"}
+      - {label: "Text on Blue", name: "text-on-blue", widget: "text"}
+      - label: "3 Points"
+        name: "points-3"
+        widget: "list"
+        field:
+          - label: "Point"
+            name: "point"
             widget: "object"
             fields:
               - {label: "Image", name: "image", widget: "image"}
