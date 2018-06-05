@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "_data/products" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    extension: "yml"
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - label: "Cover"
+        name: "cover"
+        widget: "object"
+        fields:
+          - {label: "Cover Title", name: "title", widget: "string"}
+          - {label: "Cover Subtitle", name: "subtl", widget: "string"}
+          - {label: "Cover Image", name: "image", widget: "image"}
+      - {label: "Text on Blue", name: "text-on-blue", widget: "text"}
+      - label: "3 Points"
+        name: "points-3"
+        widget: "list"
+        allow_add: false
+        fields:
+          - label: "1"
+            name: "point-1"
+            widget: "object"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Text", name: "text", widget: "text"}
+          - label: "2"
+            name: "point-2"
+            widget: "object"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Text", name: "text", widget: "text"}
+          - label: "3"
+            name: "point-3"
+            widget: "object"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Text", name: "text", widget: "text"}
