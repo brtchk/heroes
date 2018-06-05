@@ -23,7 +23,6 @@ collections:
       - label: "3 Points"
         name: "points-3"
         widget: "list"
-        allow_add: false
         fields:
           - label: "1"
             name: "point-1"
